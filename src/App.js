@@ -1,11 +1,15 @@
+import { useRecoilValue } from "recoil";
 import "./App.css";
+import { openState } from "./atom";
+import Contents from "./Contents/Contents";
 import Cover from "./Cover/Cover";
 
 function App() {
+  const isOpen = useRecoilValue(openState);
   return (
     <>
-      <div>portfolio</div>
-      <Cover></Cover>
+      {isOpen ? <Contents /> : null}
+      <Cover />
     </>
   );
 }

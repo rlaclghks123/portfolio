@@ -2,16 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import Time from "../Cover/Time";
 import { motion } from "framer-motion";
+import { useSetRecoilState } from "recoil";
+import { openState } from "../atom";
 
 const IpadBox = styled.div`
-  width: 450px;
-  height: 550px;
+  margin-top: 4%;
+  width: 30%;
+  position: absolute;
+  height: 85%;
   background-color: #13120f;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 0px 30px;
-  box-shadow: 3px 10px 10px 2px black;
-  border: 0.1 solid black;
+  border: 2px solid gray;
+  box-shadow: 0px 2px 2px 2px black;
+  right: 13%;
 `;
+
 const IPadCameraBox = styled.div`
   width: 100%;
   height: 20px;
@@ -31,7 +37,6 @@ const IPadCameraBox = styled.div`
 const IpadContent = styled.div`
   width: 100%;
   height: 82%;
-  border-radius: 3px;
   background-image: url("images/bgImg.JPG");
   background-position: center;
   background-size: cover;
@@ -51,6 +56,8 @@ const IPadHomeBox = styled.div`
     height: 20px;
     border-radius: 50%;
     border: 1.5px solid white;
+    opacity: 0.9;
+    box-shadow: 1px 2px 2px 2px black;
   }
 `;
 
@@ -129,8 +136,9 @@ const icon = {
   },
 };
 function Ipad() {
+  const setOpen = useSetRecoilState(openState);
   const Test = () => {
-    console.log("123");
+    setOpen(prev => !prev);
   };
   return (
     <IpadBox>
