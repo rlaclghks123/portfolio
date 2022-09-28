@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Ipad from "../Ipad/Ipad";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,8 +14,22 @@ const Wrapper = styled.div`
   background-size: cover;
 `;
 
+const Box = styled.div`
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 700px;
+  top: 100px;
+`;
+
 function Cover() {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <Box>
+        <Ipad />
+      </Box>
+    </Wrapper>
+  );
 }
 
 export default Cover;
