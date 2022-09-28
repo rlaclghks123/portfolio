@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import Ipad from "../Ipad/Ipad";
@@ -26,7 +27,13 @@ function Cover() {
   return (
     <Wrapper>
       <Box>
-        <Ipad />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 1 }}
+        >
+          <Ipad />
+        </motion.div>
       </Box>
     </Wrapper>
   );
