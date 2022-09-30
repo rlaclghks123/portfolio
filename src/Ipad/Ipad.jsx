@@ -13,8 +13,8 @@ const IpadBox = styled.div`
   background-color: #13120f;
   border-radius: 25px;
   padding: 0px 30px;
-  border: 2px solid gray;
-  box-shadow: 0px 2px 2px 2px black;
+  border: 2px solid #8e8f93;
+  box-shadow: 3px 3px 3px 3px black;
   right: 13%;
 `;
 
@@ -39,23 +39,25 @@ const IpadContent = styled.div`
   height: 82%;
   background-image: url("images/bgImg.JPG");
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: 3px solid #252525;
+  border-radius: 5px;
 `;
 
 const IPadHomeBox = styled.div`
   width: 100%;
   height: 30px;
   display: flex;
-
   margin: 10px 0px;
 
   justify-content: center;
   align-items: center;
   div {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    border: 1.5px solid white;
+    border: 0.1px solid white;
     opacity: 0.9;
     box-shadow: 1px 2px 2px 2px black;
   }
@@ -66,19 +68,22 @@ const Screen = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 `;
 
 const ScreenHeader = styled.div`
   width: 100%;
   height: 3%;
   display: flex;
+  padding: 3px 0px;
   justify-content: space-between;
   align-items: center;
   background-color: #acb5c1;
   div {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 7px;
+    font-weight: 500;
     margin: 0px 3px;
   }
   svg {
@@ -102,39 +107,53 @@ const HeaderRight = styled.div`
   align-items: center;
 `;
 
-const Icon = styled(motion.div)`
+const AlertBox = styled(motion.div)`
   position: absolute;
-  top: 30%;
-  left: 45%;
+  width: 45%;
+  height: 6%;
+  border-radius: 14px;
+  background-color: #f5f5f7;
+  padding: 10px;
+  right: 10px;
+  top: 7%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  cursor: pointer;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px black;
+`;
+
+const AlertIcon = styled.div`
+  width: 18%;
+  height: 100%;
 
   svg {
-    width: 30px;
-    height: 30px;
-    path {
-      stroke: black;
-      stroke-width: 2;
-    }
-  }
-  div {
-    margin-top: 3px;
-    font-size: 12px;
+    width: 90%;
+    height: 90%;
+    stroke-width: 0.1px;
   }
 `;
 
-const icon = {
-  start: { opacity: 0, scale: 0 },
-  end: {
-    opacity: 1,
-    scale: 1,
-    rotateZ: 720,
-    transition: { duration: 3, delay: 1 },
-  },
-};
+const AlertTitle = styled.div`
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+`;
+
+const OpenBox = styled.div`
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  background-color: #e3e4e6;
+  cursor: pointer;
+`;
+
 function Ipad() {
   const setOpen = useSetRecoilState(openState);
   const Test = () => {
@@ -167,12 +186,30 @@ function Ipad() {
               </div>
             </HeaderRight>
           </ScreenHeader>
-          <Icon variants={icon} initial="start" animate="end" onClick={Test}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-              <motion.path d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z" />
-            </svg>
-            <motion.div>포트폴리오</motion.div>
-          </Icon>
+
+          <AlertBox
+            initial={{ x: 300 }}
+            animate={{ x: 0, transition: { duration: 1, delay: 1 } }}
+            whileHover={{
+              scale: 1.5,
+              translateX: -80,
+              translateY: 20,
+              transition: { duration: 0.7 },
+            }}
+            exit={{ translateX: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <AlertIcon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path
+                  fill="#34495e"
+                  d="M365.3 93.38l-74.63-74.64C278.6 6.742 262.3 0 245.4 0L64-.0001c-35.35 0-64 28.65-64 64l.0065 384c0 35.34 28.65 64 64 64H320c35.2 0 64-28.8 64-64V138.6C384 121.7 377.3 105.4 365.3 93.38zM336 448c0 8.836-7.164 16-16 16H64.02c-8.838 0-16-7.164-16-16L48 64.13c0-8.836 7.164-16 16-16h160L224 128c0 17.67 14.33 32 32 32h79.1V448zM96 280C96 293.3 106.8 304 120 304h144C277.3 304 288 293.3 288 280S277.3 256 264 256h-144C106.8 256 96 266.8 96 280zM264 352h-144C106.8 352 96 362.8 96 376s10.75 24 24 24h144c13.25 0 24-10.75 24-24S277.3 352 264 352z"
+                />
+              </svg>
+            </AlertIcon>
+            <AlertTitle>포트폴리오</AlertTitle>
+            <OpenBox onClick={Test}>Open</OpenBox>
+          </AlertBox>
         </Screen>
       </IpadContent>
       <IPadHomeBox>

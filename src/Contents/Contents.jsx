@@ -9,12 +9,13 @@ const MainPage = styled(motion.div)`
   z-index: 3;
   background-color: white;
   width: 100%;
+  font-size: 200px;
   height: 100%;
 `;
 
 const MainVar = {
-  start: { scale: 0, opacity: 0 },
-  end: { scale: 1, opacity: 1, transition: { duration: 1.5 } },
+  start: { opacity: 0 },
+  end: { opacity: 1, transition: { duration: 1 } },
 };
 function Contents() {
   const isOpen = useRecoilValue(openState);
