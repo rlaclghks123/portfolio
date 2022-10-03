@@ -10,10 +10,10 @@ const Wrapper = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: ${props => props.theme.bgColor};
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to Bottom, #222b33, #12171b);
 `;
 
 const Logo = styled(motion.div)`
