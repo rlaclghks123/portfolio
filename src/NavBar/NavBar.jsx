@@ -22,7 +22,9 @@ const NavLogo = styled(motion.div)`
   svg {
     width: 15px;
     height: 15px;
-    fill: ${props => props.theme.navColor};
+    fill: ${props => props.theme.textColor};
+    stroke-width: 25px;
+    stroke: ${props => props.theme.navBgColor};
   }
 `;
 

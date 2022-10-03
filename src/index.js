@@ -4,17 +4,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
 import GlobalStyle from "./GlobalStyle";
-import { ThemeProvider } from "styled-components";
-import { DarkTheme, DefaultTheme } from "./styled.d";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RecoilRoot>
       <GlobalStyle />
-      <ThemeProvider theme={DefaultTheme}>
-        <App />
-      </ThemeProvider>
+      <App />
     </RecoilRoot>
   </React.StrictMode>
 );
