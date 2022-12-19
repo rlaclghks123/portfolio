@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Cover from './cover/Cover';
-import PortFolio from './portFolio/PortFolio';
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, DefaultTheme } from './styled.d';
+import About from './routes/About';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Skills from './routes/Skills';
+import NavBar from './navBar/NavBar';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -31,15 +34,19 @@ function App() {
     setBlackAndWhiteBtn((prev) => !prev);
   };
   return (
-    <>
-      <ThemeProvider theme={BlackAndWhiteBtn ? DefaultTheme : DarkTheme}>
+    <ThemeProvider theme={BlackAndWhiteBtn ? DefaultTheme : DarkTheme}>
+      <BrowserRouter>
         <Cover />
-        <PortFolio />
+        <NavBar />
         <BlackWhiteBtn onClick={togleBtn} style={{ cursor: 'pointer' }}>
           다크 모드
         </BlackWhiteBtn>
-      </ThemeProvider>
-    </>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

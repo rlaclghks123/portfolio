@@ -1,24 +1,28 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const TimeBox = styled.div`
-  font-size: 50px;
-  margin: 30px 0px;
+const Wrapper = styled.div`
+  font-size: 15px;
   font-weight: 500;
   display: flex;
+  position: absolute;
+  right: 45%;
   align-items: center;
 `;
 
+const Box = styled.div`
+  margin: 0px 2px;
+`;
+
 function Time() {
-  const [timer, setTimer] = useState("00:00:00");
+  const [timer, setTimer] = useState('00:00');
 
   const currentTime = () => {
     const time = new Date();
-    const hour = String(time.getHours()).padStart(2, "0");
-    const minute = String(time.getMinutes()).padStart(2, "0");
-    const second = String(time.getSeconds()).padStart(2, "0");
+    const hour = String(time.getHours()).padStart(2, '0');
+    const minute = String(time.getMinutes()).padStart(2, '0');
 
-    setTimer(`${hour}:${minute}:${second}`);
+    setTimer(`${hour}:${minute}`);
   };
 
   const startTime = () => {
@@ -32,36 +36,34 @@ function Time() {
 
     switch (toDay) {
       case 1:
-        return "월";
+        return '월';
 
       case 2:
-        return "화";
+        return '화';
       case 3:
-        return "수";
+        return '수';
 
       case 4:
-        return "목";
+        return '목';
       case 5:
-        return "금";
+        return '금';
 
       case 6:
-        return "토";
+        return '토';
       case 7:
-        return "일";
+        return '일';
 
       default:
-        return "요일";
+        return '요일';
     }
   };
 
   return (
-    <TimeBox>
-      <div>{`${new Date().getFullYear()}년`}</div>
-      <div>{`${new Date().getMonth() + 1}월`}</div>
-      <div>{`${new Date().getDate()}일 (${getDateFn()})`}</div>
-
-      <div>{timer}</div>
-    </TimeBox>
+    <Wrapper>
+      <Box>{`${new Date().getMonth() + 1}월`}</Box>
+      <Box>{`${new Date().getDate()}일 (${getDateFn()})`}</Box>
+      <Box>{timer}</Box>
+    </Wrapper>
   );
 }
 
