@@ -5,8 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import { DarkTheme, DefaultTheme } from './styled.d';
 import About from './routes/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Skills from './routes/Skills';
 import NavBar from './navBar/NavBar';
+import Projects from './routes/Projects';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -33,6 +33,7 @@ function App() {
   const togleBtn = () => {
     setBlackAndWhiteBtn((prev) => !prev);
   };
+
   return (
     <ThemeProvider theme={BlackAndWhiteBtn ? DefaultTheme : DarkTheme}>
       <BrowserRouter>
@@ -41,9 +42,10 @@ function App() {
         <BlackWhiteBtn onClick={togleBtn} style={{ cursor: 'pointer' }}>
           다크 모드
         </BlackWhiteBtn>
+
         <Routes>
           <Route path="/" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

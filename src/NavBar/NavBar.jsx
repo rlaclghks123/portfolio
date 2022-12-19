@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import App from '../App';
-import Cover from '../cover/Cover';
 import Time from '../cover/Time';
 
 const NavBarWrapper = styled(motion.div)`
@@ -44,6 +42,7 @@ const NavUl = styled.ul`
 const NavLi = styled.li`
   margin: 0px auto;
   cursor: pointer;
+
   &:hover {
     opacity: 0.5;
   }
@@ -79,7 +78,7 @@ function NavBar() {
           <Link to="/">About</Link>
         </NavLi>
         <NavLi>
-          <Link to="/skills">Skills</Link>
+          <Link to="/projects">Projects</Link>
         </NavLi>
       </NavUl>
 
