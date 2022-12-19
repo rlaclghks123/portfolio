@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
+import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled(motion.div)`
   box-sizing: border-box;
@@ -9,7 +9,7 @@ const Wrapper = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,11 +19,13 @@ const Wrapper = styled(motion.div)`
 const Logo = styled(motion.div)`
   width: max-content;
   height: max-content;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
 `;
 
 const Svg = styled.svg`
   width: 30px;
   height: 30px;
+
   path {
     stroke: white;
     stroke-width: 2;
@@ -43,10 +45,10 @@ const WrapperVar = {
 };
 
 const SvgVar = {
-  start: { pathLength: 0, fill: "rgba(255, 255, 255, 0)" },
+  start: { pathLength: 0, fill: 'rgba(255, 255, 255, 0)' },
   end: {
     pathLength: 3,
-    fill: "rgba(255, 255, 255, 1)",
+    fill: 'rgba(255, 255, 255, 1)',
   },
 };
 

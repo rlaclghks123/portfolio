@@ -1,30 +1,32 @@
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import React from 'react';
+import styled from 'styled-components';
 
 const NavBarWrapper = styled(motion.div)`
   width: 100%;
   height: 50px;
-  background: ${props => props.theme.navBgColor};
-  color: ${props => props.theme.navColor};
+  background: ${(props) => props.theme.navBgColor};
+  color: ${(props) => props.theme.navColor};
   border-bottom: 0.1px solid rgba(44, 62, 80, 0.4);
   display: flex;
   align-items: center;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
 `;
 
 const NavLogo = styled(motion.div)`
-  padding: 10px;
+  padding: 3px;
   margin: 0px 15px;
   cursor: pointer;
+  box-shadow: 0px 0px 3px ${(props) => props.theme.navColor};
   svg {
     width: 15px;
     height: 15px;
-    fill: ${props => props.theme.textColor};
+    fill: ${(props) => props.theme.textColor};
     stroke-width: 25px;
-    stroke: ${props => props.theme.navBgColor};
+    stroke: ${(props) => props.theme.navBgColor};
   }
 `;
 
@@ -38,6 +40,9 @@ const NavUl = styled.ul`
 const NavLi = styled.ul`
   margin: 0px auto;
   cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 function NavBar() {

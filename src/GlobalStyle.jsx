@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
     ${reset};
@@ -7,19 +7,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        
+        overflow: hidden;
+        text-decoration: none;
     };
-    button{
-        display: flex;
-        cursor: pointer;
-        outline: none;
-        border-radius: 3px;
-    };
-    input{
-        display: flex;
-        outline: none;
-        padding-left: 10px;
-    }
+
 `;
 
 export default GlobalStyle;

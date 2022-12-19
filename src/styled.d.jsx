@@ -8,7 +8,7 @@ export const DefaultTheme = {
 
 export const DarkTheme = {
   bgColor: "linear-gradient(to Bottom, #222b33, #12171b)",
-  navBgColor: "#2c3e50",
+  navBgColor: "#12171B",
   navColor: "rgba(236, 240, 241,1.0)",
   textColor: "rgba(236, 240, 241,1.0)",
 };
