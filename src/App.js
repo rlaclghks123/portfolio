@@ -7,6 +7,7 @@ import About from './routes/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './navBar/NavBar';
 import Projects from './routes/Projects';
+import { AnimatePresence } from 'framer-motion';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -37,11 +38,13 @@ function App() {
   return (
     <ThemeProvider theme={BlackAndWhiteBtn ? DefaultTheme : DarkTheme}>
       <BrowserRouter>
-        <Cover />
-        <NavBar />
-        <BlackWhiteBtn onClick={togleBtn} style={{ cursor: 'pointer' }}>
-          다크 모드
-        </BlackWhiteBtn>
+        <AnimatePresence>
+          <Cover />
+          <NavBar />
+          <BlackWhiteBtn onClick={togleBtn} style={{ cursor: 'pointer' }}>
+            다크 모드
+          </BlackWhiteBtn>
+        </AnimatePresence>
 
         <Routes>
           <Route path="/" element={<About />} />
