@@ -48,6 +48,11 @@ const NavLi = styled.li`
   }
 `;
 
+const navTitle = [
+  { url: '/', title: 'About' },
+  { url: '/', title: 'Projects' },
+];
+
 function NavBar() {
   return (
     <NavBarWrapper>
@@ -74,12 +79,13 @@ function NavBar() {
         </NavLogo>
       </Link>
       <NavUl>
-        <NavLi>
-          <Link to="/">About</Link>
-        </NavLi>
-        <NavLi>
-          <Link to="/projects">Projects</Link>
-        </NavLi>
+        {navTitle.map((info, index) => (
+          <NavLi>
+            <Link to={info.url} key={index}>
+              {info.title}
+            </Link>
+          </NavLi>
+        ))}
       </NavUl>
 
       <Time />
