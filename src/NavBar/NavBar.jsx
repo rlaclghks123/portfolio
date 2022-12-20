@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Time from '../cover/Time';
 
-const NavBarWrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)`
   width: 100%;
   height: 50px;
   background: ${(props) => props.theme.navBgColor};
@@ -18,11 +18,12 @@ const NavBarWrapper = styled(motion.div)`
   left: 0;
 `;
 
-const NavLogo = styled(motion.div)`
+const Logo = styled(motion.div)`
   padding: 3px;
   margin: 0px 15px;
   cursor: pointer;
   box-shadow: 0px 0px 3px ${(props) => props.theme.navColor};
+
   svg {
     width: 15px;
     height: 15px;
@@ -32,14 +33,14 @@ const NavLogo = styled(motion.div)`
   }
 `;
 
-const NavUl = styled.ul`
+const TitleColumns = styled.ul`
   width: 15%;
   height: 100%;
   display: flex;
   align-items: center;
 `;
 
-const NavLi = styled.li`
+const Title = styled.li`
   margin: 0px auto;
   cursor: pointer;
 
@@ -50,14 +51,14 @@ const NavLi = styled.li`
 
 const navTitle = [
   { url: '/', title: 'About' },
-  { url: '/', title: 'Projects' },
+  { url: '/projects', title: 'Projects' },
 ];
 
 function NavBar() {
   return (
-    <NavBarWrapper>
+    <Wrapper>
       <Link to="/">
-        <NavLogo>
+        <Logo>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
             <motion.path d="M329.1 142.9c-62.5-62.5-155.8-62.5-218.3 0s-62.5 163.8 0 226.3s155.8 62.5 218.3 0c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3c-87.5 87.5-221.3 87.5-308.8 0s-87.5-229.3 0-316.8s221.3-87.5 308.8 0c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0z" />
           </svg>
@@ -76,20 +77,19 @@ function NavBar() {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
             <motion.path d="M0 448c0 17.7 14.3 32 32 32s32-14.3 32-32H0zM32 64L56.6 43.5C48 33.2 33.8 29.3 21.1 33.9S0 50.5 0 64l32 0zM352 448l-24.6 20.5c8.6 10.3 22.8 14.2 35.5 9.6s21.1-16.6 21.1-30.1H352zM384 64c0-17.7-14.3-32-32-32s-32 14.3-32 32h64zM64 448V64H0V448H64zM7.4 84.5l320 384 49.2-41-320-384L7.4 84.5zM384 448V64H320V448h64z" />
           </svg>
-        </NavLogo>
+        </Logo>
       </Link>
-      <NavUl>
+
+      <TitleColumns>
         {navTitle.map((info, index) => (
-          <NavLi>
-            <Link to={info.url} key={index}>
-              {info.title}
-            </Link>
-          </NavLi>
+          <Title key={`title-${index}`}>
+            <Link to={info.url}>{info.title}</Link>
+          </Title>
         ))}
-      </NavUl>
+      </TitleColumns>
 
       <Time />
-    </NavBarWrapper>
+    </Wrapper>
   );
 }
 
