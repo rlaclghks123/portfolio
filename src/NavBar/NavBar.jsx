@@ -23,10 +23,13 @@ const Logo = styled(motion.div)`
   margin: 0px 15px;
   cursor: pointer;
   box-shadow: 0px 0px 3px ${(props) => props.theme.navColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
-    width: 15px;
-    height: 15px;
+    width: 1.2vw;
+    height: 1.2vw;
     fill: ${(props) => props.theme.textColor};
     stroke-width: 25px;
     stroke: ${(props) => props.theme.navBgColor};
@@ -34,7 +37,7 @@ const Logo = styled(motion.div)`
 `;
 
 const TitleColumns = styled.ul`
-  width: 15%;
+  width: 25%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -43,15 +46,21 @@ const TitleColumns = styled.ul`
 const Title = styled.li`
   margin: 0px auto;
   cursor: pointer;
-
   &:hover {
     opacity: 0.5;
   }
 `;
 
+const TitleName = styled.span`
+  color: ${(props) => props.theme.textColor};
+  font-size: 1.5vw;
+  margin-right: 5px;
+`;
+
 const navTitle = [
   { url: '/', title: 'About' },
   { url: '/projects', title: 'Projects' },
+  { url: '/feedback', title: 'FeedBack' },
 ];
 
 function NavBar() {
@@ -83,7 +92,9 @@ function NavBar() {
       <TitleColumns>
         {navTitle.map((info, index) => (
           <Title key={`title-${index}`}>
-            <Link to={info.url}>{info.title}</Link>
+            <Link to={info.url}>
+              <TitleName>{info.title}</TitleName>
+            </Link>
           </Title>
         ))}
       </TitleColumns>
