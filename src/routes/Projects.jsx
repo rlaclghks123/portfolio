@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import Carousel from '../components/Carousel';
 import DoubleBox from '../components/DoubleBox';
@@ -9,6 +10,10 @@ const ItemImg = styled(motion.div)`
   background-image: url(${({ imgsrc }) => imgsrc});
   width: 55vh;
   height: 70vh;
+`;
+
+const TitleImg = styled(ItemImg)`
+  border-radius: 10px;
 `;
 
 const List = styled.div`
@@ -104,22 +109,59 @@ const data = [
 ];
 
 function Projects() {
+  const [hoverId, setHoverId] = useState(-1);
+
+  const [hoverData, setHoverData] = useState({});
+
+  const handleEnter = useCallback((e) => {
+    setHoverId(Number(e.target.closest('li').dataset.liId));
+    setHoverData({
+      start: {
+        borderRadius: '10px',
+        scale: 0.9,
+      },
+      end: { scale: 1, opactiy: 1, transition: { duration: 0.4 } },
+      exit: { scale: 0 },
+    });
+  }, []);
+
   return (
     <DoubleBox>
-      <Carousel>
-        <ItemImg />
-      </Carousel>
+      {hoverId === -1 ? (
+        <TitleImg imgsrc={['images/새.png']} />
+      ) : (
+        <Carousel>
+          {data[hoverId].images.map((imgsrc, i) => {
+            return (
+              <ItemImg
+                imgsrc={imgsrc}
+                key={i}
+                initial={hoverData.start}
+                animate={hoverData.end}
+                exit={hoverData.exit}
+              />
+            );
+          })}
+        </Carousel>
+      )}
 
       <List>
-        <Title>
+        <Title onMouseEnter={() => setHoverId(-1)} data-li-id={-1}>
           <span>PROJECTS</span>
           <span>Total {data.length}</span>
         </Title>
         <Ul>
           {data.map((item, index) => {
             return (
-              <Li key={index} data-li-id={index}>
-                <span>{item.title}</span>
+              <Li
+                key={index}
+                onMouseEnter={handleEnter}
+                onMouseLeave={() => setHoverData({})}
+                data-li-id={index}
+              >
+                <span onMouseEnter={handleEnter} onMouseLeave={() => setHoverData({})}>
+                  {item.title}
+                </span>
                 <span>{item.projectType}</span>
               </Li>
             );
