@@ -36,6 +36,8 @@ const CarouselItemsWrapper = styled.div`
 const Button = styled.button`
   background-color: inherit;
   border: none;
+  color: ${(props) => props.theme.textColor};
+  cursor: pointer;
   &:hover {
     opacity: 0.5;
   }
