@@ -1,26 +1,22 @@
 import styled from 'styled-components';
 import Carousel from '../components/Carousel';
 import DoubleBox from '../components/DoubleBox';
+import { motion } from 'framer-motion';
 
-const ItemImg = styled.div`
+const ItemImg = styled(motion.div)`
   background-position: center;
   background-size: cover;
-  background-image: url(${({ imgSrc }) => imgSrc});
-  width: 90vw;
-  height: 35vw;
+  background-image: url(${({ imgsrc }) => imgsrc});
+  width: 55vh;
+  height: 70vh;
 `;
 
 function Projects() {
   return (
     <DoubleBox>
       <Carousel>
-        {['images/고래.png', 'images/다람쥐.png', 'images/독수리.png', 'images/새.png'].map(
-          (imgSrc, i) => {
-            return <ItemImg imgSrc={imgSrc} key={i} />;
-          }
-        )}
+        <ItemImg />
       </Carousel>
-      <div>2</div>
     </DoubleBox>
   );
 }
