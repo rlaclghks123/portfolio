@@ -16,9 +16,9 @@ const Box = styled.div`
 
 function Time() {
   const [timer, setTimer] = useState('00:00');
+  const time = new Date();
 
   const currentTime = () => {
-    const time = new Date();
     const hour = String(time.getHours()).padStart(2, '0');
     const minute = String(time.getMinutes()).padStart(2, '0');
 
@@ -31,10 +31,10 @@ function Time() {
   startTime();
 
   const getDateFn = () => {
-    const time = new Date();
     const toDay = time.getDay();
-
     switch (toDay) {
+      case 0:
+        return '일';
       case 1:
         return '월';
       case 2:
@@ -47,11 +47,9 @@ function Time() {
         return '금';
       case 6:
         return '토';
-      case 7:
-        return '일';
 
       default:
-        return '요일';
+        return '일';
     }
   };
 
