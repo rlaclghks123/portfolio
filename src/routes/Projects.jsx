@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Carousel from '../components/Carousel';
 import DoubleBox from '../components/DoubleBox';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const ItemImg = styled(motion.div)`
   background-position: center;
@@ -55,10 +57,12 @@ const ProjectName = styled(motion.li)`
   cursor: pointer;
   border-bottom: 0.1px solid ${(props) => props.theme.textColor};
 
-  &:hover {
+  :hover {
     color: rgba(122, 122, 122, 0.5);
   }
 `;
+
+const Arrow = styled.span``;
 
 const data = [
   {
@@ -114,13 +118,22 @@ const data = [
   },
 ];
 
+const ArrowAnimation = {
+  start: { opactiy: 0 },
+  end: { opactiy: 1, color: 'black', transition: { delay: 3.5, duration: 1 } },
+  exit: { opactiy: 0 },
+};
+
 function Projects() {
-  const [hoverId, setHoverId] = useState(-1);
+  const [hoverPictureId, setHoverPictureId] = useState(-1);
+
+  const [hoverArrow, setHoverArrow] = useState(-1);
 
   const [hoverData, setHoverData] = useState({});
 
   const handleEnter = useCallback((e) => {
-    setHoverId(Number(e.target.closest('li').dataset.liId));
+    setHoverPictureId(Number(e.target.closest('li').dataset.liId));
+
     setHoverData({
       start: {
         borderRadius: '10px',
@@ -129,15 +142,22 @@ function Projects() {
       end: { scale: 1, opactiy: 1, transition: { duration: 0.4 } },
       exit: { scale: 0 },
     });
+
+    setHoverArrow(Number(e.target.closest('li').dataset.liId));
+  }, []);
+
+  const handleLeave = useCallback(() => {
+    setHoverData({});
+    setHoverArrow(-1);
   }, []);
 
   return (
     <DoubleBox>
-      {hoverId === -1 ? (
+      {hoverPictureId === -1 ? (
         <TitleImg imgsrc={['images/새.png']} />
       ) : (
         <Carousel>
-          {data[hoverId].images.map((imgsrc, i) => {
+          {data[hoverPictureId].images.map((imgsrc, i) => {
             return (
               <ItemImg
                 imgsrc={imgsrc}
@@ -152,7 +172,7 @@ function Projects() {
       )}
 
       <ProjectsBox>
-        <ProjectsListTitle onMouseEnter={() => setHoverId(-1)} data-li-id={-1}>
+        <ProjectsListTitle onMouseEnter={() => setHoverPictureId(-1)} data-li-id={-1}>
           <span>PROJECTS</span>
           <span>Total {data.length}</span>
         </ProjectsListTitle>
@@ -163,12 +183,21 @@ function Projects() {
               <ProjectName
                 key={index}
                 onMouseEnter={handleEnter}
-                onMouseLeave={() => setHoverData({})}
+                onMouseLeave={handleLeave}
                 data-li-id={index}
               >
-                <span onMouseEnter={handleEnter} onMouseLeave={() => setHoverData({})}>
-                  {item.title}
-                </span>
+                {hoverArrow === index ? (
+                  <Arrow
+                    initial={ArrowAnimation.start}
+                    animate={ArrowAnimation.end}
+                    exit={ArrowAnimation.exit}
+                  >
+                    <FontAwesomeIcon icon={faArrowRight} />{' '}
+                  </Arrow>
+                ) : (
+                  ''
+                )}
+                <span>{item.title}</span>
                 <span>{item.projectType}</span>
               </ProjectName>
             );
