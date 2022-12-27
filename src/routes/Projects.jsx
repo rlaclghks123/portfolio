@@ -16,14 +16,14 @@ const TitleImg = styled(ItemImg)`
   border-radius: 10px;
 `;
 
-const List = styled.div`
+const ProjectsBox = styled.div`
   width: 60%;
   height: 80%;
   overflow: hidden;
   color: ${(props) => props.theme.textColor};
 `;
 
-const Title = styled.div`
+const ProjectsListTitle = styled.div`
   padding: 5%;
   border-bottom: 0.1px solid ${(props) => props.theme.textColor};
   cursor: pointer;
@@ -38,7 +38,7 @@ const Title = styled.div`
   }
 `;
 
-const Ul = styled.div`
+const ProjectsList = styled.div`
   overflow: scroll;
   width: 100%;
   height: 100%;
@@ -47,7 +47,7 @@ const Ul = styled.div`
   }
 `;
 
-const Li = styled(motion.li)`
+const ProjectName = styled(motion.li)`
   padding: 0% 5% 10% 5%;
   margin: 10% 0px;
   display: flex;
@@ -151,15 +151,16 @@ function Projects() {
         </Carousel>
       )}
 
-      <List>
-        <Title onMouseEnter={() => setHoverId(-1)} data-li-id={-1}>
+      <ProjectsBox>
+        <ProjectsListTitle onMouseEnter={() => setHoverId(-1)} data-li-id={-1}>
           <span>PROJECTS</span>
           <span>Total {data.length}</span>
-        </Title>
-        <Ul>
+        </ProjectsListTitle>
+
+        <ProjectsList>
           {data.map((item, index) => {
             return (
-              <Li
+              <ProjectName
                 key={index}
                 onMouseEnter={handleEnter}
                 onMouseLeave={() => setHoverData({})}
@@ -169,11 +170,11 @@ function Projects() {
                   {item.title}
                 </span>
                 <span>{item.projectType}</span>
-              </Li>
+              </ProjectName>
             );
           })}
-        </Ul>
-      </List>
+        </ProjectsList>
+      </ProjectsBox>
     </DoubleBox>
   );
 }
