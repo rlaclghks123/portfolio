@@ -18,9 +18,8 @@ const TitleImg = styled(ItemImg)`
 
 const List = styled.div`
   width: 60%;
-  height: 90%;
+  height: 80%;
   overflow: hidden;
-  background-color: inherit;
   color: ${(props) => props.theme.textColor};
 `;
 
@@ -30,6 +29,13 @@ const Title = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+
+  span {
+    &:first-child {
+      font-size: 25px;
+      font-weight: 900;
+    }
+  }
 `;
 
 const Ul = styled.div`

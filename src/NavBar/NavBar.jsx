@@ -53,7 +53,7 @@ const Title = styled.li`
 
 const TitleName = styled.span`
   color: ${(props) => props.theme.textColor};
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin-right: 5px;
 `;
 
