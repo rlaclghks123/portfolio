@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useMatch } from 'react-router-dom';
 import styled from 'styled-components';
 import Time from '../cover/Time';
 
@@ -46,15 +47,26 @@ const TitleColumns = styled.ul`
 const Title = styled.li`
   margin: 0px auto;
   cursor: pointer;
+  position: relative;
   &:hover {
     opacity: 0.5;
   }
 `;
 
-const TitleName = styled.span`
+const TitleName = styled(motion.span)`
   color: ${(props) => props.theme.textColor};
   font-size: 1.3vw;
-  margin-right: 5px;
+`;
+
+const CurrentLocation = styled(motion.span)`
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #95a5a6;
 `;
 
 const navTitle = [
@@ -64,6 +76,9 @@ const navTitle = [
 ];
 
 function NavBar() {
+  const [currentUrl, setCurrentUrl] = useState('/');
+  const matchUrl = useMatch(currentUrl);
+
   return (
     <Wrapper>
       <Link to="/">
@@ -91,9 +106,16 @@ function NavBar() {
 
       <TitleColumns>
         {navTitle.map((info, index) => (
-          <Title key={`title-${index}`}>
+          <Title key={`title-${index}`} onClick={() => setCurrentUrl(info.url)}>
             <Link to={info.url}>
-              <TitleName>{info.title}</TitleName>
+              <TitleName>
+                {info.title}
+                {info.url === matchUrl.pathname ? (
+                  <CurrentLocation layoutId="CurrentLocation" />
+                ) : (
+                  ''
+                )}
+              </TitleName>
             </Link>
           </Title>
         ))}
