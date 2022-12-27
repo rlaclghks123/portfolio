@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useMatch } from 'react-router-dom';
 import styled from 'styled-components';
-import Time from '../cover/Time';
+import Time from './Time';
 
 const Wrapper = styled(motion.div)`
   width: 100%;
@@ -77,7 +77,7 @@ const navTitle = [
 
 function NavBar() {
   const [currentUrl, setCurrentUrl] = useState('/');
-  const matchUrl = useMatch(currentUrl);
+  const matchUrl = useMatch(currentUrl ?? '/');
 
   return (
     <Wrapper>
@@ -110,10 +110,8 @@ function NavBar() {
             <Link to={info.url}>
               <TitleName>
                 {info.title}
-                {info.url === matchUrl.pathname ? (
+                {info.url === (matchUrl.pathname ?? '/') && (
                   <CurrentLocation layoutId="CurrentLocation" />
-                ) : (
-                  ''
                 )}
               </TitleName>
             </Link>

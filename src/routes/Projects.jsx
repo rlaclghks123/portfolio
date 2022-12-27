@@ -186,7 +186,7 @@ function Projects() {
                 onMouseLeave={handleLeave}
                 data-li-id={index}
               >
-                {hoverArrow === index ? (
+                {hoverArrow === index && (
                   <Arrow
                     initial={ArrowAnimation.start}
                     animate={ArrowAnimation.end}
@@ -194,8 +194,6 @@ function Projects() {
                   >
                     <FontAwesomeIcon icon={faArrowRight} />{' '}
                   </Arrow>
-                ) : (
-                  ''
                 )}
                 <span>{item.title}</span>
                 <span>{item.projectType}</span>
