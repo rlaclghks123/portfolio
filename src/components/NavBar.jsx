@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useState } from 'react';
-import { Link, useMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled(motion.div)`
@@ -79,7 +79,6 @@ const navTitle = [
 
 function NavBar() {
   const [currentUrl, setCurrentUrl] = useState('/');
-  const matchUrl = useMatch(currentUrl ?? '/');
 
   return (
     <Wrapper>
@@ -112,9 +111,7 @@ function NavBar() {
             <Link to={info.url}>
               <TitleName>
                 {info.title}
-                {info.url === (matchUrl.pathname ?? '/') && (
-                  <CurrentLocation layoutId="CurrentLocation" />
-                )}
+                {info.url === currentUrl && <CurrentLocation layoutId="CurrentLocation" />}
               </TitleName>
             </Link>
           </Title>

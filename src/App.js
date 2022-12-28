@@ -13,7 +13,7 @@ const BlackWhiteBtn = styled.div`
   border-radius: 20px;
   padding: 10px;
   position: fixed;
-  z-index: 99;
+  z-index: 3;
   bottom: 30px;
   right: 50px;
   display: flex;
@@ -23,6 +23,7 @@ const BlackWhiteBtn = styled.div`
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
   border: 1px solid black;
+
   &:hover {
     background-color: ${(props) => props.theme.navColor};
     color: ${(props) => props.theme.navBgColor};

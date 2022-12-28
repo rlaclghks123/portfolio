@@ -10,6 +10,8 @@ const Wrapper = styled.div`
   justify-content: center;
   background: ${(props) => props.theme.bgColor};
   margin-top: 50px;
+  position: absolute;
+  z-index: 2;
 `;
 
 const Container = styled.div`
