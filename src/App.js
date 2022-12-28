@@ -7,6 +7,7 @@ import About from './routes/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Projects from './routes/Projects';
+import Contact from './routes/Contact';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

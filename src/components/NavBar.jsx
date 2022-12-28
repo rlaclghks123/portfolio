@@ -3,7 +3,6 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useMatch } from 'react-router-dom';
 import styled from 'styled-components';
-import Time from './Time';
 
 const Wrapper = styled(motion.div)`
   width: 100%;
@@ -12,11 +11,14 @@ const Wrapper = styled(motion.div)`
   color: ${(props) => props.theme.navColor};
   border-bottom: 0.1px solid rgba(44, 62, 80, 0.4);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
+  padding: 0 1%;
+  box-sizing: border-box;
 `;
 
 const Logo = styled(motion.div)`
@@ -38,7 +40,7 @@ const Logo = styled(motion.div)`
 `;
 
 const TitleColumns = styled.ul`
-  width: 25%;
+  width: 27%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -72,7 +74,7 @@ const CurrentLocation = styled(motion.span)`
 const navTitle = [
   { url: '/', title: 'About' },
   { url: '/projects', title: 'Projects' },
-  { url: '/feedback', title: 'FeedBack' },
+  { url: '/contact', title: 'Contact' },
 ];
 
 function NavBar() {
@@ -81,7 +83,7 @@ function NavBar() {
 
   return (
     <Wrapper>
-      <Link to="/">
+      <Link to="/" onClick={() => setCurrentUrl('/')}>
         <Logo>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
             <motion.path d="M329.1 142.9c-62.5-62.5-155.8-62.5-218.3 0s-62.5 163.8 0 226.3s155.8 62.5 218.3 0c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3c-87.5 87.5-221.3 87.5-308.8 0s-87.5-229.3 0-316.8s221.3-87.5 308.8 0c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0z" />
@@ -118,8 +120,6 @@ function NavBar() {
           </Title>
         ))}
       </TitleColumns>
-
-      <Time />
     </Wrapper>
   );
 }

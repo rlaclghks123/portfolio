@@ -192,7 +192,7 @@ function Projects() {
                     animate={ArrowAnimation.end}
                     exit={ArrowAnimation.exit}
                   >
-                    <FontAwesomeIcon icon={faArrowRight} />{' '}
+                    <FontAwesomeIcon icon={faArrowRight} />
                   </Arrow>
                 )}
                 <span>{item.title}</span>
