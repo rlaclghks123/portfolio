@@ -1,6 +1,7 @@
 import DoubleBox from '../components/DoubleBox';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
+import { useRef } from 'react';
 
 const Box = styled.div`
   display: flex;
@@ -71,6 +72,7 @@ const RightBox = styled(Box)`
     opacity: 0.4;
   }
 `;
+
 const SendBtn = styled.input`
   cursor: pointer;
   border: none;
@@ -94,17 +96,27 @@ const Message = styled.input`
 `;
 
 function Contact() {
+  const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
+
     emailjs
-      .sendForm('rlaclghks123@google.com', 'template_ulold68', 'PEbUpyLAtUOMe_WD9')
-      .then((result) => {
-        alert('전송이 완료됐습니다.');
-      });
+      .sendForm('rlaclghks123@google.com', 'template_ulold68', form.current, 'PEbUpyLAtUOMe_WD9')
+      .then(
+        (result) => {
+          alert('메일이 정상적으로 보내졌습니다.');
+          console.log(result);
+        },
+        (error) => {
+          alert('메일을 정상적으로 보내는데 실패했습니다. ❌');
+          console.log(error);
+        }
+      );
   };
 
   return (
-    <form onSubmit={sendEmail}>
+    <form onSubmit={sendEmail} ref={form}>
       <DoubleBox>
         <LeftBox>
           <ul>
@@ -143,7 +155,7 @@ function Contact() {
         </LeftBox>
         <RightBox>
           <label htmlFor="message">Message</label>
-          <Message name="text" id="message" required />
+          <Message name="message" id="message" required />
           <SendBtn type="submit" value="Send Message" />
         </RightBox>
       </DoubleBox>
