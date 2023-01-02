@@ -64,7 +64,16 @@ const Main = styled.div`
   margin: 3% 0;
 
   &::-webkit-scrollbar {
-    width: 0px;
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
   }
 `;
 
@@ -89,7 +98,7 @@ const Preview = styled.div`
   background-size: cover;
   background-image: url(${({ imgsrc }) => imgsrc});
   width: 100%;
-  height: 40vh;
+  height: 67vh;
 `;
 
 const Footer = styled.div`
