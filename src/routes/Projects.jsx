@@ -5,6 +5,7 @@ import DoubleBox from '../components/DoubleBox';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Aside from '../components/Aside';
 import { useRecoilState } from 'recoil';
 import { projectContents, projectDetailIdAtom } from '../atom';
 
@@ -168,6 +169,7 @@ function Projects() {
           </ProjectsList>
         </ProjectsBox>
       </DoubleBox>
+      {projectDetailId >= 0 && <Aside />}
     </>
   );
 }
