@@ -5,6 +5,8 @@ import DoubleBox from '../components/DoubleBox';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useRecoilState } from 'recoil';
+import { projectContents, projectDetailIdAtom } from '../atom';
 
 const ItemImg = styled(motion.div)`
   background-position: center;
@@ -16,6 +18,8 @@ const ItemImg = styled(motion.div)`
 
 const TitleImg = styled(ItemImg)`
   border-radius: 10px;
+  width: 70vh;
+  height: 50vh;
 `;
 
 const ProjectsBox = styled.div`
@@ -56,7 +60,6 @@ const ProjectName = styled(motion.li)`
   justify-content: space-between;
   cursor: pointer;
   border-bottom: 0.1px solid ${(props) => props.theme.textColor};
-
   :hover {
     color: rgba(122, 122, 122, 0.5);
   }
@@ -64,64 +67,15 @@ const ProjectName = styled(motion.li)`
 
 const Arrow = styled.span``;
 
-const data = [
-  {
-    title: 'React-Ui-Storybook',
-    images: ['images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png'],
-    projectType: '개인프로젝트',
-  },
-
-  {
-    title: 'Learn-About-Css',
-    images: ['images/고래.png', 'images/고래.png', 'images/고래.png', 'images/고래.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'A',
-    images: ['images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'B',
-    images: ['images/새.png', 'images/새.png', 'images/새.png', 'images/새.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'C',
-    images: ['images/고래.png', 'images/고래.png', 'images/고래.png', 'images/고래.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'D',
-    images: ['images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'A',
-    images: ['images/새.png', 'images/새.png', 'images/새.png', 'images/새.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'B',
-    images: ['images/고래.png', 'images/고래.png', 'images/고래.png', 'images/고래.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'C',
-    images: ['images/여우.png', 'images/여우.png', 'images/여우.png', 'images/여우.png'],
-    projectType: '개인프로젝트',
-  },
-  {
-    title: 'D',
-    images: ['images/고래.png', 'images/고래.png', 'images/고래.png', 'images/고래.png'],
-    projectType: '개인프로젝트',
-  },
-];
-
 const ArrowAnimation = {
   start: { opactiy: 0 },
   end: { opactiy: 1, color: 'black', transition: { delay: 3.5, duration: 1 } },
   exit: { opactiy: 0 },
+};
+
+const projectVar = {
+  start: { opactiy: 0, y: -1000 },
+  end: { opactiy: 1, x: 0, y: 0, transition: { duration: 1.5 } },
 };
 
 function Projects() {
@@ -130,6 +84,10 @@ function Projects() {
   const [hoverArrow, setHoverArrow] = useState(-1);
 
   const [hoverData, setHoverData] = useState({});
+
+  const [projectDetailId, setprojectDetailId] = useRecoilState(projectDetailIdAtom);
+
+  const projects = useRecoilState(projectContents);
 
   const handleEnter = useCallback((e) => {
     setHoverPictureId(Number(e.target.closest('li').dataset.liId));
@@ -152,57 +110,65 @@ function Projects() {
   }, []);
 
   return (
-    <DoubleBox>
-      {hoverPictureId === -1 ? (
-        <TitleImg imgsrc={['images/새.png']} />
-      ) : (
-        <Carousel>
-          {data[hoverPictureId].images.map((imgsrc, i) => {
-            return (
-              <ItemImg
-                imgsrc={imgsrc}
-                key={i}
-                initial={hoverData.start}
-                animate={hoverData.end}
-                exit={hoverData.exit}
-              />
-            );
-          })}
-        </Carousel>
-      )}
+    <>
+      <DoubleBox>
+        {hoverPictureId === -1 ? (
+          <TitleImg imgsrc={['images/skills.jpg']} />
+        ) : (
+          <Carousel>
+            {projects[0][hoverPictureId].images.map((imgsrc, i) => {
+              return (
+                <ItemImg
+                  imgsrc={imgsrc}
+                  key={i}
+                  initial={hoverData.start}
+                  animate={hoverData.end}
+                  exit={hoverData.exit}
+                />
+              );
+            })}
+          </Carousel>
+        )}
 
-      <ProjectsBox>
-        <ProjectsListTitle onMouseEnter={() => setHoverPictureId(-1)} data-li-id={-1}>
-          <span>PROJECTS</span>
-          <span>Total {data.length}</span>
-        </ProjectsListTitle>
+        <ProjectsBox>
+          <ProjectsListTitle onMouseEnter={() => setHoverPictureId(-1)} data-li-id={-1}>
+            <span>PROJECTS</span>
+            <span>Total {projects[0].length}</span>
+          </ProjectsListTitle>
 
-        <ProjectsList>
-          {data.map((item, index) => {
-            return (
-              <ProjectName
-                key={index}
-                onMouseEnter={handleEnter}
-                onMouseLeave={handleLeave}
-                data-li-id={index}
-              >
-                {hoverArrow === index && (
-                  <Arrow
-                    initial={ArrowAnimation.start}
-                    animate={ArrowAnimation.end}
-                    exit={ArrowAnimation.exit}
-                  >
-                    <FontAwesomeIcon icon={faArrowRight} />
-                  </Arrow>
-                )}
-                <span>{item.title}</span>
-                <span>{item.projectType}</span>
-              </ProjectName>
-            );
-          })}
-        </ProjectsList>
-      </ProjectsBox>
-    </DoubleBox>
+          <ProjectsList>
+            {projects[0].map((item, index) => {
+              return (
+                <ProjectName
+                  key={index}
+                  onMouseEnter={handleEnter}
+                  onMouseLeave={handleLeave}
+                  onClick={() => {
+                    setprojectDetailId(index);
+                  }}
+                  data-li-id={index}
+                  variants={projectVar}
+                  initial={'start'}
+                  animate={'end'}
+                >
+                  {hoverArrow === index && (
+                    <Arrow
+                      initial={ArrowAnimation.start}
+                      animate={ArrowAnimation.end}
+                      exit={ArrowAnimation.exit}
+                    >
+                      <FontAwesomeIcon icon={faArrowRight} />
+                    </Arrow>
+                  )}
+                  <span>{item.title}</span>
+                  <span>{item.projectType}</span>
+                </ProjectName>
+              );
+            })}
+          </ProjectsList>
+        </ProjectsBox>
+      </DoubleBox>
+    </>
   );
 }
 export default Projects;
