@@ -93,10 +93,13 @@ const MainContentsBoxContent = styled.div`
   line-height: 23px;
 `;
 
-const Preview = styled.div`
-  background-position: center;
-  background-size: cover;
-  background-image: url(${({ imgsrc }) => imgsrc});
+const BlankUrl = styled.div`
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+
+const Preview = styled.img`
   width: 100%;
   height: 67vh;
 `;
@@ -140,9 +143,17 @@ function Aside() {
                   <MainContentsBoxTitle>{item.title}</MainContentsBoxTitle>
                   <MainContentsBoxContent>
                     {item.title === 'Preview' ? (
-                      <Preview imgsrc={item.contents}></Preview>
+                      <Preview src={item.contents}></Preview>
                     ) : (
-                      <p>{item.contents}</p>
+                      <p>
+                        {item.contents.url ? (
+                          <BlankUrl onClick={() => window.open(item.contents.url, '_blank')}>
+                            프로젝트 이동하기 &larr;
+                          </BlankUrl>
+                        ) : (
+                          item.contents
+                        )}
+                      </p>
                     )}
                   </MainContentsBoxContent>
                 </MainContentsBox>

@@ -9,11 +9,8 @@ import Aside from '../components/Aside';
 import { useRecoilState } from 'recoil';
 import { projectContents, projectDetailIdAtom } from '../atom';
 
-const ItemImg = styled(motion.div)`
-  background-position: center;
-  background-size: cover;
-  background-image: url(${({ imgsrc }) => imgsrc});
-  width: 55vh;
+const ItemImg = styled(motion.img)`
+  width: 400px;
   height: 70vh;
 `;
 
@@ -49,6 +46,7 @@ const ProjectsList = styled.div`
   overflow: scroll;
   width: 100%;
   height: 100%;
+
   &::-webkit-scrollbar {
     width: 0px;
   }
@@ -61,18 +59,13 @@ const ProjectName = styled(motion.li)`
   justify-content: space-between;
   cursor: pointer;
   border-bottom: 0.1px solid ${(props) => props.theme.textColor};
+
   :hover {
     color: rgba(122, 122, 122, 0.5);
   }
 `;
 
 const Arrow = styled.span``;
-
-const ArrowAnimation = {
-  start: { opactiy: 0 },
-  end: { opactiy: 1, color: 'black', transition: { delay: 3.5, duration: 1 } },
-  exit: { opactiy: 0 },
-};
 
 const projectVar = {
   start: { opactiy: 0, y: -1000 },
@@ -114,13 +107,16 @@ function Projects() {
     <>
       <DoubleBox>
         {hoverPictureId === -1 ? (
-          <TitleImg imgsrc={['images/skills.jpg']} />
+          <TitleImg src={['images/skills.jpg']} />
         ) : (
           <Carousel>
             {projects[0][hoverPictureId].images.map((imgsrc, i) => {
               return (
                 <ItemImg
-                  imgsrc={imgsrc}
+                  width="400px"
+                  height="400px"
+                  align="center"
+                  src={imgsrc}
                   key={i}
                   initial={hoverData.start}
                   animate={hoverData.end}
@@ -153,11 +149,7 @@ function Projects() {
                   animate={'end'}
                 >
                   {hoverArrow === index && (
-                    <Arrow
-                      initial={ArrowAnimation.start}
-                      animate={ArrowAnimation.end}
-                      exit={ArrowAnimation.exit}
-                    >
+                    <Arrow>
                       <FontAwesomeIcon icon={faArrowRight} />
                     </Arrow>
                   )}

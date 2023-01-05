@@ -9,35 +9,33 @@ export const projectContents = atom({
   key: 'projectContents',
   default: [
     {
-      title: 'React-Ui-Storybook',
-      images: ['images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png', 'images/다람쥐.png'],
-      projectType: '개인프로젝트',
+      title: 'ToDo List',
+      images: [
+        'images/todo_list_img/basic.jpg',
+        'images/todo_list_img/closeToDoList.jpg',
+        'images/todo_list_img/expandToDoList.jpg',
+      ],
+      projectType: '클론코딩',
+      githubUrl: 'https://github.com/rlaclghks123/momentom-2021',
       description: [
         {
           title: 'Preview',
-          contents: 'images/고래.png',
+          contents: 'images/todo_list_img/basic.jpg',
         },
         {
           title: 'About',
           contents:
-            'HTML과 CSS에 대한 지식 습득 및 여러 사이트들을 클론코딩을 통해 직접 적용해보며 연습을 위한 개인프로젝트',
+            'Vanilla Js를 사용해서 웹사이트를 클론코딩하며 Event, API, LocalStorage 등 다양한 지식들을 습득하기 위한 프로젝트이며, 단순히 클론 코딩에서 멈추지 않고 toDo List를 닫기, 열기, 확대, 축소 기능을 추가',
         },
         {
           title: '사용스택',
-          contents: 'HTML, CSS',
+          contents: 'HTML, CSS, Vanill Js',
         },
         {
-          title: 'Preview',
-          contents: 'images/고래.png',
-        },
-        {
-          title: 'About',
-          contents:
-            'HTML과 CSS에 대한 지식 습득 및 여러 사이트들을 클론코딩을 통해 직접 적용해보며 연습을 위한 개인프로젝트',
-        },
-        {
-          title: '사용스택',
-          contents: 'HTML, CSS',
+          title: '프로젝트 URL',
+          contents: {
+            url: 'https://rlaclghks123.github.io/momentom-2021/',
+          },
         },
       ],
     },
