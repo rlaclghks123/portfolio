@@ -2,7 +2,7 @@ export const DefaultTheme = {
   bgColor: 'rgba(236, 240, 241,1.0)',
   navBgColor: `rgba(236, 240, 241,1.0)`,
   navColor: '#2c3e50',
-  textColor: '#2c3e50',
+  textColor: 'black',
   boxBgColor: 'white',
   boxShadow: '0px 0px 5px rgb(0, 0, 0, 0.7)',
 };

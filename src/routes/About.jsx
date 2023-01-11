@@ -23,8 +23,6 @@ const AboutContents = styled.div`
   background-color: ${(props) => props.theme.boxBgColor};
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
 
   & > div {
     overflow: hidden;
@@ -40,14 +38,13 @@ const AboutContentsHeader = styled.div`
   letter-spacing: 1px;
   p {
     &:last-child {
-      border-bottom: 1px solid ${(props) => props.theme.textColor};
       font-weight: 900;
     }
   }
 `;
 
 const AboutContentsMain = styled.div`
-  height: 25%;
+  height: 20%;
 
   p {
     margin-bottom: 10px;
@@ -65,10 +62,6 @@ const AboutContentsFooter = styled.div`
     path {
       fill: ${(props) => props.theme.textColor};
     }
-
-    &:hover {
-      opacity: 0.3;
-    }
   }
 `;
 
@@ -83,6 +76,9 @@ const FooterColumn = styled.div`
 
 const Url = styled.a`
   margin-right: 50%;
+  &:hover {
+    opacity: 0.3;
+  }
 `;
 
 function About() {
@@ -92,13 +88,13 @@ function About() {
 
       <AboutContents>
         <AboutContentsHeader>
-          <p>기본을 건너뛰는 사람은 모래 위에 집을 짓는 사람과 같고,</p>
           <p>
-            기본을 지키는 사람은 튼튼한 기초 위에 건물을 세운 사람과<br></br> 같다고 합니다.
+            기본을 건너뛰는 사람은 모래 위에 집을 짓는 사람과 같고, 기본을 지키는 사람은 튼튼한 기초
+            위에 건물을 세운 사람과 같다고 합니다.
           </p>
           <br></br>
           <p> 안녕하세요. 어떤 태풍이 불어도 무너지지 않도록</p>
-          <p>기본기를 탄탄하게 공부중인 프론트엔드 개발자 김치환입니다.</p>
+          <p>기본기를 탄탄하게 공부중인 김치환입니다.</p>
         </AboutContentsHeader>
 
         <AboutContentsMain>

@@ -142,8 +142,8 @@ function Aside() {
                 <MainContentsBox key={index}>
                   <MainContentsBoxTitle>{item.title}</MainContentsBoxTitle>
                   <MainContentsBoxContent>
-                    {item.title === 'Preview' ? (
-                      <Preview src={item.contents}></Preview>
+                    {item.contents.img ? (
+                      <Preview src={item.contents.img}></Preview>
                     ) : (
                       <p>
                         {item.contents.url ? (

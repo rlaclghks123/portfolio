@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family:serif;
         overflow: hidden;
         text-decoration: none;
     };
