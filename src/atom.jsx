@@ -20,16 +20,28 @@ export const projectContents = atom({
       description: [
         {
           title: 'Preview',
-          contents: 'images/todo_list_img/basic.jpg',
+          contents: {
+            img: 'images/todo_list_img/basic.jpg',
+          },
         },
         {
           title: 'About',
           contents:
-            'Vanilla Js를 사용해서 웹사이트를 클론코딩하며 Event, API, LocalStorage 등 다양한 지식들을 습득하기 위한 프로젝트이며, 단순히 클론 코딩에서 멈추지 않고 toDo List를 닫기, 열기, 확대, 축소 기능을 추가',
+            'Vanilla Js를 사용해서 웹사이트를 클론코딩하며 Event, API, LocalStorage 등 다양한 지식들을 습득하기 위한 프로젝트이며,',
+        },
+        {
+          title: '클론코딩과 별개로 스스로 기능 추가',
+          contents:
+            'ToDoList 삭제시 Confirm을 추가하여 조금 더 안전한 ToDoList 구현 및 ToDoList의 확대, 축소, 삭제 기능 추가',
+        },
+        {
+          title: '배운점',
+          contents:
+            '날씨 API를 적용해보며 API 사용 방법, Date객체를 활용한 시계 구현 방법, LocalStorage를 통해 서버 없이 Data를 저장하는 방법을 배울 수 있었습니다.',
         },
         {
           title: '사용스택',
-          contents: 'HTML, CSS, Vanill Js',
+          contents: 'HTML, CSS, Vanilla Js',
         },
         {
           title: '프로젝트 URL',
@@ -60,13 +72,22 @@ export const projectContents = atom({
       description: [
         {
           title: 'Preview',
-          contents: 'images/css_img/tolv.jpg',
+          contents: {
+            img: 'images/css_img/tolv.jpg',
+          },
         },
         {
           title: 'About',
           contents:
             'HTML과 CSS & SCSS에 대한 지식 습득 및 다양한 사이트들을 직접 클론코딩 해보며 진행한 개인프로젝트',
         },
+
+        {
+          title: '배운점',
+          contents:
+            'CSS의 Flex, Grid에 대해 이해하고, 실제로 적용해보며 CSS를 다루는데 있어서 많이 익숙해졌습니다.',
+        },
+
         {
           title: '사용스택',
           contents: 'HTML, CSS & SASS',

@@ -87,7 +87,7 @@ const MainContentsBoxTitle = styled.div`
   font-weight: 700;
 `;
 
-const MainContentsBoxContent = styled.div`
+const MainContentsBoxMain = styled.div`
   font-size: 13px;
   letter-spacing: 0.4px;
   line-height: 23px;
@@ -141,11 +141,11 @@ function Aside() {
               return (
                 <MainContentsBox key={index}>
                   <MainContentsBoxTitle>{item.title}</MainContentsBoxTitle>
-                  <MainContentsBoxContent>
+                  <MainContentsBoxMain>
                     {item.contents.img ? (
                       <Preview src={item.contents.img}></Preview>
                     ) : (
-                      <p>
+                      <div style={{ width: '85%' }}>
                         {item.contents.url ? (
                           <BlankUrl onClick={() => window.open(item.contents.url, '_blank')}>
                             프로젝트 이동하기 &larr;
@@ -153,9 +153,9 @@ function Aside() {
                         ) : (
                           item.contents
                         )}
-                      </p>
+                      </div>
                     )}
-                  </MainContentsBoxContent>
+                  </MainContentsBoxMain>
                 </MainContentsBox>
               );
             })}

@@ -39,6 +39,7 @@ const AboutContentsHeader = styled.div`
   p {
     &:last-child {
       font-weight: 900;
+      color: rgb(140, 122, 230);
     }
   }
 `;
