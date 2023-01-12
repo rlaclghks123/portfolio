@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Projects from './routes/Projects';
 import Contact from './routes/Contact';
+import NotFound from './routes/NotFound';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -49,6 +50,7 @@ function App() {
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

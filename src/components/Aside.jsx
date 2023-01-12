@@ -83,8 +83,8 @@ const MainContentsBox = styled.div`
 
 const MainContentsBoxTitle = styled.div`
   margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 900;
 `;
 
 const MainContentsBoxMain = styled.div`
@@ -168,6 +168,7 @@ function Aside() {
           </Footer>
         </Box>
       </Wrapper>
+
       {projectDetailId !== -1 && (
         <DarkBgColorAtModal
           onClick={() => {
