@@ -9,6 +9,41 @@ export const projectContents = atom({
   key: 'projectContents',
   default: [
     {
+      title: 'Bridge Game',
+      images: [
+        'images/bridge_game/play.jpg',
+        'images/bridge_game/class.jpg',
+        'images/bridge_game/test.jpg',
+      ],
+
+      projectType: '개인프로젝트',
+      githubUrl: 'https://github.com/rlaclghks123/javascript-bridge/tree/practiceAfterTest',
+      description: [
+        {
+          title: 'Preview',
+          contents: {
+            video: 'images/bridge_game/testVideo.mp4',
+          },
+        },
+        {
+          title: 'About',
+          contents:
+            'Vanilla Js를 사용해서 NodeJS의 콘솔창에서 입력을 받아, 출력을 나타내며, Class를 사용하여 모듈화를 했으며, 유지보수 및 가독성을 위해 MVC패턴을 적용했습니다. 또한  프로젝트의 안정감을 더할수 있도록 jest를 활용하여 코드를 Test 했습니다.',
+        },
+
+        {
+          title: 'Clean Code',
+          contents:
+            'Clean Code를 위해 함수의 길이를 최대한 10줄 이내로 작성했고, 변수명, 함수명을 많은 고민을 통해 의미있고 이해하기 쉽도록 작명했으며, AirBnB 코딩컨벤션에 맞춰 코드를 작성했습니다.',
+        },
+
+        {
+          title: '사용스택',
+          contents: 'HTML, CSS, Vanilla Js, NodeJS',
+        },
+      ],
+    },
+    {
       title: 'ToDo List',
       images: [
         'images/todo_list_img/basic.jpg',
@@ -27,7 +62,7 @@ export const projectContents = atom({
         {
           title: 'About',
           contents:
-            'Vanilla Js를 사용해서 웹사이트를 클론코딩하며 Event, API, LocalStorage 등 다양한 지식들을 습득하기 위한 프로젝트이며,',
+            'Vanilla Js를 사용해서 웹사이트를 클론코딩하며 Event, API, LocalStorage 등 VanillaJS에 대한 지식들을 습득하기 위해 진행한 프로젝트입니다.',
         },
         {
           title: '클론코딩과 별개로 스스로 기능 추가',

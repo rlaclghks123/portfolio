@@ -96,12 +96,18 @@ const MainContentsBoxMain = styled.div`
 const BlankUrl = styled.div`
   &:hover {
     opacity: 0.5;
+    cursor: pointer;
   }
 `;
 
-const Preview = styled.img`
+const PreviewImg = styled.img`
   width: 100%;
-  height: 67vh;
+  height: 50vh;
+`;
+
+const PreviewVideo = styled.video`
+  width: 100%;
+  height: 50vh;
 `;
 
 const Footer = styled.div`
@@ -123,6 +129,13 @@ const Footer = styled.div`
   }
 `;
 
+const CONTENT_TYPE = {
+  video: (src) => <PreviewVideo src={src} autoPlay />,
+  img: (src) => <PreviewImg src={src} />,
+  url: (src, content) => <BlankUrl onClick={() => window.open(src, '_blank')}>{content}</BlankUrl>,
+  contents: (contents) => <span>{contents}</span>,
+};
+
 function Aside() {
   const [projectDetailId, setProjectDetailId] = useRecoilState(projectDetailIdAtom);
   const projects = useRecoilValue(projectContents);
@@ -142,17 +155,17 @@ function Aside() {
                 <MainContentsBox key={index}>
                   <MainContentsBoxTitle>{item.title}</MainContentsBoxTitle>
                   <MainContentsBoxMain>
-                    {item.contents.img ? (
-                      <Preview src={item.contents.img}></Preview>
+                    {item.contents.video || item.contents.img ? (
+                      item.contents.video ? (
+                        CONTENT_TYPE.video(item.contents.video)
+                      ) : (
+                        CONTENT_TYPE.img(item.contents.img)
+                      )
                     ) : (
                       <div style={{ width: '85%' }}>
-                        {item.contents.url ? (
-                          <BlankUrl onClick={() => window.open(item.contents.url, '_blank')}>
-                            프로젝트 이동하기 &larr;
-                          </BlankUrl>
-                        ) : (
-                          item.contents
-                        )}
+                        {item.contents.url
+                          ? CONTENT_TYPE.url(item.contents.url, `프로젝트 이동하기 <=`)
+                          : CONTENT_TYPE.contents(item.contents)}
                       </div>
                     )}
                   </MainContentsBoxMain>
