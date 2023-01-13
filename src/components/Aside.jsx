@@ -77,17 +77,17 @@ const Main = styled.div`
   }
 `;
 
-const MainContentsBox = styled.div`
+const MainContentsList = styled.div`
   margin-bottom: 7%;
 `;
 
-const MainContentsBoxTitle = styled.div`
+const MainContentsListTitle = styled.div`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 900;
 `;
 
-const MainContentsBoxMain = styled.div`
+const MainContentsListContents = styled.div`
   font-size: 13px;
   letter-spacing: 0.4px;
   line-height: 23px;
@@ -152,9 +152,9 @@ function Aside() {
           <Main>
             {projects[projectDetailId].description.map((item, index) => {
               return (
-                <MainContentsBox key={index}>
-                  <MainContentsBoxTitle>{item.title}</MainContentsBoxTitle>
-                  <MainContentsBoxMain>
+                <MainContentsList key={index}>
+                  <MainContentsListTitle>{item.title}</MainContentsListTitle>
+                  <MainContentsListContents>
                     {item.contents.video || item.contents.img ? (
                       item.contents.video ? (
                         CONTENT_TYPE.video(item.contents.video)
@@ -168,8 +168,8 @@ function Aside() {
                           : CONTENT_TYPE.contents(item.contents)}
                       </div>
                     )}
-                  </MainContentsBoxMain>
-                </MainContentsBox>
+                  </MainContentsListContents>
+                </MainContentsList>
               );
             })}
           </Main>
