@@ -4,6 +4,14 @@ import styled from 'styled-components';
 import { useRef } from 'react';
 
 const Box = styled.div`
+  @media screen and (max-width: 700px) {
+    height: 80%;
+    input {
+      &::placeholder {
+        font-size: 10px;
+      }
+    }
+  }
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -14,7 +22,6 @@ const Box = styled.div`
   justify-content: center;
   background: ${(props) => props.theme.boxBgColor};
   box-shadow: ${(props) => props.theme.boxShadow};
-
   input {
     outline: none;
   }
@@ -26,7 +33,7 @@ const LeftBox = styled(Box)`
   display: flex;
 
   ul {
-    height: 80%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -34,16 +41,19 @@ const LeftBox = styled(Box)`
     align-items: center;
 
     li {
+      @media screen and (max-width: 700px) {
+        padding: 0px;
+      }
       cursor: pointer;
       width: 60%;
       display: flex;
       flex-direction: column;
-      margin: 5% 0;
+      padding: 5%;
 
       label {
         color: ${(props) => props.theme.textColor};
         cursor: pointer;
-        margin-bottom: 10px;
+        margin: 10px 0px 5px 0px;
         font-size: 13px;
         opacity: 0.5;
       }
@@ -74,6 +84,11 @@ const RightBox = styled(Box)`
 `;
 
 const SendBtn = styled.input`
+  @media screen and (max-width: 700px) {
+    bottom: 5%;
+    left: 30%;
+    right: 30%;
+  }
   cursor: pointer;
   border: none;
   position: absolute;
