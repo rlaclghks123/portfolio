@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const CarouselContainer = styled.div`
-  width: ${({ itemWidth }) => `${itemWidth}px`};
+  @media screen and (max-width: 700px) {
+    width: 200px;
+    height: 90%;
+  }
+  width: 400px;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -13,15 +17,13 @@ const CarouselContainer = styled.div`
 `;
 
 const NavigationWrapper = styled.div`
-  width: ${({ itemWidth }) => `${itemWidth}px`};
+  width: 100%;
   display: flex;
   justify-content: space-between;
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto 0;
   background-color: transparent;
-  height: fit-content;
   z-index: 5;
 `;
 

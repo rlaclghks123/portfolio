@@ -10,17 +10,28 @@ import { useRecoilState } from 'recoil';
 import { projectContents, projectDetailIdAtom } from '../atom';
 
 const ItemImg = styled(motion.img)`
+  @media screen and (max-width: 700px) {
+    width: 200px;
+    height: 90%;
+  }
   width: 400px;
   height: 70vh;
 `;
 
 const TitleImg = styled(ItemImg)`
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    height: 80%;
+  }
   border-radius: 10px;
   width: 70vh;
   height: 50vh;
 `;
 
 const ProjectsBox = styled.div`
+  @media screen and (max-width: 700px) {
+    font-size: 10px;
+  }
   width: 60%;
   height: 80%;
   overflow: hidden;
@@ -32,10 +43,14 @@ const ProjectsListTitle = styled.div`
   border-bottom: 0.1px solid ${(props) => props.theme.textColor};
   cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   span {
     &:first-child {
+      @media screen and (max-width: 700px) {
+        font-size: 18px;
+      }
       font-size: 25px;
       font-weight: 900;
     }
