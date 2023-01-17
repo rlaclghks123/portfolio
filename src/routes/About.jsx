@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import DoubleBox from '../components/DoubleBox';
 
 const Picture = styled.div`
+  @media screen and (max-width: 700px) {
+    height: 50%;
+  }
   width: 80%;
   height: 80%;
   background-image: url('images/bgImg.JPG');
@@ -12,7 +15,16 @@ const Picture = styled.div`
 `;
 
 const AboutContents = styled.div`
-  height: 85%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    height: 90%;
+    font-size: 8px;
+    margin-top: -100px;
+    div {
+      line-height: 13px;
+    }
+  }
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
   padding: 10%;
@@ -45,6 +57,10 @@ const AboutContentsHeader = styled.div`
 `;
 
 const AboutContentsMain = styled.div`
+  @media screen and (max-width: 700px) {
+    height: 20%;
+    margin-top: 10px;
+  }
   height: 20%;
 
   p {
@@ -53,8 +69,11 @@ const AboutContentsMain = styled.div`
 `;
 
 const AboutContentsFooter = styled.div`
+  @media screen and (max-width: 700px) {
+    margin-top: 10px;
+    height: 30%;
+  }
   height: 25%;
-
   svg {
     margin-left: 10px;
     width: 20px;
@@ -67,6 +86,18 @@ const AboutContentsFooter = styled.div`
 `;
 
 const FooterColumn = styled.div`
+  @media screen and (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    height: 15px;
+    margin: 3px 0px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
   display: flex;
   justify-content: space-between;
   margin: 1vh 0;

@@ -5,29 +5,42 @@ import { motion } from 'framer-motion';
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
   background: ${(props) => props.theme.bgColor};
   margin-top: 50px;
+  flex-direction: column;
   position: absolute;
   z-index: 2;
+  box-sizing: border-box;
 `;
 
 const Container = styled.div`
   width: 80%;
   height: 100%;
   display: flex;
+  align-items: center;
+  padding: 30px 0px;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Box = styled(motion.div)`
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    height: 47%;
+  }
   width: 50%;
-  margin: 8% 2%;
+  height: 70%;
+  margin: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 const LeftBox = styled(Box)``;
 
 const RightBox = styled(Box)``;
