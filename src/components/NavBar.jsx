@@ -40,6 +40,9 @@ const Logo = styled(motion.div)`
 `;
 
 const TitleColumns = styled.ul`
+  @media screen and (max-width: 700px) {
+    width: 40%;
+  }
   width: 27%;
   height: 100%;
   display: flex;
