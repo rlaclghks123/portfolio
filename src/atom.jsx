@@ -9,6 +9,45 @@ export const projectContents = atom({
   key: 'projectContents',
   default: [
     {
+      title: 'Portfolio',
+      images: [
+        'images/portfolio/about.jpg',
+        'images/portfolio/project.jpg',
+        'images/portfolio/contact.jpg',
+        'images/portfolio/darkmode.jpg',
+      ],
+
+      projectType: '개인프로젝트',
+      githubUrl: 'https://github.com/rlaclghks123/portfolio',
+      description: [
+        {
+          title: 'Preview',
+          contents: {
+            video: 'images/portfolio/preview.mov',
+          },
+        },
+        {
+          title: 'About',
+          contents: '현재까지 제가 진행했던 프로젝트에 대해 설명하기 위해 만든 포트폴리오 입니다.',
+        },
+        {
+          title: '배운점',
+          contents:
+            '클린코드와 재사용 가능한 부분에 대해서 많이 고민하고, 스스로 코드를 작성 해보면서 최대한 보기좋고, 유지보수 하기 좋게 만들어볼려고 노력했던 부분에 대해서 많이 배웠습니다.',
+        },
+        {
+          title: '아쉬운점',
+          contents:
+            '처음부터 끝까지 저 혼자서 만든 디자인, 코드이기 때문에 어떤 문제가 있는지 잘 모르는 부분이 제일 아쉬운 것 같습니다.',
+        },
+
+        {
+          title: '사용스택',
+          contents: 'React, styled-components, Framer-Motion',
+        },
+      ],
+    },
+    {
       title: 'Ajax-test-project',
       images: [
         'images/ajax_project/home.jpg',
