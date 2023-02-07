@@ -45,6 +45,51 @@ export const projectContents = atom({
       ],
     },
     {
+      title: 'React-Ui-StoryBook',
+      images: [
+        'images/react_storybook/tag.jpg',
+        'images/react_storybook/tabBar.jpg',
+        'images/react_storybook/button.jpg',
+        'images/react_storybook/breadCrumb.jpg',
+        'images/react_storybook/comment.jpg',
+        'images/react_storybook/carousel.jpg',
+        'images/react_storybook/bentoMenu.jpg',
+      ],
+      projectType: '팀프로젝트',
+      githubUrl: 'https://github.com/rahee-k-it/react-ui-storybook',
+      description: [
+        {
+          title: 'Preview',
+          contents: {
+            img: 'images/react_storybook/tag.jpg',
+          },
+        },
+        {
+          title: 'About',
+          contents:
+            'React와 StoryBook을 사용하여 32가지 UI Components를 협업을 통해 만들어본 프로젝트 입니다. ',
+        },
+        {
+          title: '제가 맡은 부분',
+          contents: 'TabBar, Comment, Carousel, BentoMenu, Tag, BreadCrumb, Button',
+        },
+        {
+          title: '배운점',
+          contents:
+            'GitHub를 통한 협업하는 방법, GitFlow를 사용하여 좀 더 안전하게 개발할 수 있었던 점을 배웠습니다. 또한 코드리뷰를 통해 부족한점에 대해 많이 배울 수 있었습니다.',
+        },
+        {
+          title: '아쉬운점',
+          contents:
+            '취업, 국비교육, 부트캠프 등 프로젝트 진행중에 같이 진행한 조원들이 일이 생겨 프로젝트를 잘 마무리를 짓지 못해서 많이 아쉬움이 남는것 같습니다.',
+        },
+        {
+          title: '사용스택',
+          contents: 'React, StoryBook, Styled-components, tailwindCSS',
+        },
+      ],
+    },
+    {
       title: 'Bridge Game',
       images: [
         'images/bridge_game/play.jpg',
@@ -53,7 +98,7 @@ export const projectContents = atom({
       ],
 
       projectType: '개인프로젝트',
-      githubUrl: 'https://github.com/rlaclghks123/javascript-bridge/tree/practiceAfterTest',
+      githubUrl: 'https://github.com/rlaclghks123/javascript-bridge/tree/practiceAfterTest/docs',
       description: [
         {
           title: 'Preview',
