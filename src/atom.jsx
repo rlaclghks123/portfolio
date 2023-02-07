@@ -9,6 +9,42 @@ export const projectContents = atom({
   key: 'projectContents',
   default: [
     {
+      title: 'Ajax-test-project',
+      images: [
+        'images/ajax_project/home.jpg',
+        'images/ajax_project/join.jpg',
+        'images/ajax_project/login.jpg',
+        'images/ajax_project/purchase.jpg',
+        'images/ajax_project/kakaoMap.jpg',
+      ],
+
+      projectType: '개인프로젝트',
+      githubUrl: 'https://github.com/rlaclghks123/ajax-test-project',
+      description: [
+        {
+          title: 'Preview',
+          contents: {
+            video: 'images/ajax_project/preview.mov',
+          },
+        },
+        {
+          title: 'About',
+          contents:
+            'JavaScript를 공부하던 중 Ajax, API 사용 방법을 익히기 위해 연습하는 프로젝트입니다.',
+        },
+        {
+          title: '배운점',
+          contents:
+            'Ajax의 3가지 방법(XML, fetch then, axios)을 통해 서버와 연결하는 법을 알게됐으며, 서버도 직접 구현해서 웹 시스템이 어떻게 돌아가는지 알게 되었습니다.',
+        },
+
+        {
+          title: '사용스택',
+          contents: 'Vanilla Js, React, styled-components, NodeJS',
+        },
+      ],
+    },
+    {
       title: 'Bridge Game',
       images: [
         'images/bridge_game/play.jpg',
