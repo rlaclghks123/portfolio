@@ -121,6 +121,7 @@ function Contact() {
       .then(
         (result) => {
           alert('메일이 정상적으로 보내졌습니다.');
+          window.location.reload();
           console.log(result);
         },
         (error) => {
