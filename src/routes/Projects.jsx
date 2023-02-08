@@ -122,7 +122,7 @@ function Projects() {
     <>
       <DoubleBox>
         {hoverPictureId === -1 ? (
-          <TitleImg src={['images/skills.jpg']} />
+          <TitleImg src={['https://rlaclghks123.github.io/portfolio/images/skills.jpg']} />
         ) : (
           <Carousel>
             {projects[0][hoverPictureId].images.map((imgsrc, i) => {

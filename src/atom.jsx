@@ -11,10 +11,10 @@ export const projectContents = atom({
     {
       title: 'Portfolio',
       images: [
-        'images/portfolio/about.jpg',
-        'images/portfolio/project.jpg',
-        'images/portfolio/contact.jpg',
-        'images/portfolio/darkmode.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/portfolio/about.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/portfolio/project.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/portfolio/contact.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/portfolio/darkmode.jpg',
       ],
 
       projectType: '개인프로젝트',
@@ -23,7 +23,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            video: 'images/portfolio/preview.mov',
+            video: 'https://rlaclghks123.github.io/portfolio/images/portfolio/preview.mov',
           },
         },
         {
@@ -50,11 +50,11 @@ export const projectContents = atom({
     {
       title: 'Ajax-test-project',
       images: [
-        'images/ajax_project/home.jpg',
-        'images/ajax_project/join.jpg',
-        'images/ajax_project/login.jpg',
-        'images/ajax_project/purchase.jpg',
-        'images/ajax_project/kakaoMap.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/home.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/join.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/login.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/purchase.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/kakaoMap.jpg',
       ],
 
       projectType: '개인프로젝트',
@@ -63,7 +63,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            video: 'images/ajax_project/preview.mov',
+            video: 'https://rlaclghks123.github.io/portfolio/images/ajax_project/preview.mov',
           },
         },
         {
@@ -86,13 +86,13 @@ export const projectContents = atom({
     {
       title: 'React-Ui-StoryBook',
       images: [
-        'images/react_storybook/tag.jpg',
-        'images/react_storybook/tabBar.jpg',
-        'images/react_storybook/button.jpg',
-        'images/react_storybook/breadCrumb.jpg',
-        'images/react_storybook/comment.jpg',
-        'images/react_storybook/carousel.jpg',
-        'images/react_storybook/bentoMenu.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/tag.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/tabBar.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/button.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/breadCrumb.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/comment.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/carousel.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/react_storybook/bentoMenu.jpg',
       ],
       projectType: '팀프로젝트',
       githubUrl: 'https://github.com/rahee-k-it/react-ui-storybook',
@@ -100,7 +100,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            img: 'images/react_storybook/tag.jpg',
+            img: 'https://rlaclghks123.github.io/portfolio/images/react_storybook/tag.jpg',
           },
         },
         {
@@ -131,9 +131,9 @@ export const projectContents = atom({
     {
       title: 'Bridge Game',
       images: [
-        'images/bridge_game/play.jpg',
-        'images/bridge_game/class.jpg',
-        'images/bridge_game/test.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/bridge_game/play.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/bridge_game/class.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/bridge_game/test.jpg',
       ],
 
       projectType: '개인프로젝트',
@@ -142,7 +142,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            video: 'images/bridge_game/testVideo.mp4',
+            video: 'https://rlaclghks123.github.io/portfolio/images/bridge_game/testVideo.mp4',
           },
         },
         {
@@ -166,9 +166,9 @@ export const projectContents = atom({
     {
       title: 'ToDo List',
       images: [
-        'images/todo_list_img/basic.jpg',
-        'images/todo_list_img/closeToDoList.jpg',
-        'images/todo_list_img/expandToDoList.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/basic.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/closeToDoList.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/expandToDoList.jpg',
       ],
       projectType: '클론코딩',
       githubUrl: 'https://github.com/rlaclghks123/momentom-2021',
@@ -176,7 +176,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            img: 'images/todo_list_img/basic.jpg',
+            img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/basic.jpg',
           },
         },
         {
@@ -210,17 +210,17 @@ export const projectContents = atom({
     {
       title: 'HTML & CSS',
       images: [
-        'images/css_img/beige.jpg',
-        'images/css_img/best_horror.jpg',
-        'images/css_img/canalstreet.jpg',
-        'images/css_img/donicaida.jpg',
-        'images/css_img/paint_box.jpg',
-        'images/css_img/rodicdavidson.jpg',
-        'images/css_img/schwartzmedia.jpg',
-        'images/css_img/ten_x_nineteen.jpg',
-        'images/css_img/tolv.jpg',
-        'images/css_img/wonhundred.jpg',
-        'images/css_img/zoo.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/beige.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/best_horror.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/canalstreet.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/donicaida.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/paint_box.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/rodicdavidson.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/schwartzmedia.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/ten_x_nineteen.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/tolv.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/wonhundred.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/css_img/zoo.jpg',
       ],
       projectType: '클론코딩',
       githubUrl: 'https://github.com/rlaclghks123/Learn_About_CSS',
@@ -228,7 +228,7 @@ export const projectContents = atom({
         {
           title: 'Preview',
           contents: {
-            img: 'images/css_img/tolv.jpg',
+            img: 'https://rlaclghks123.github.io/portfolio/images/css_img/tolv.jpg',
           },
         },
         {
