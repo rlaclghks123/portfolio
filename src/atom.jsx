@@ -54,7 +54,7 @@ export const projectContents = atom({
         'https://rlaclghks123.github.io/portfolio/images/ajax_project/join.jpg',
         'https://rlaclghks123.github.io/portfolio/images/ajax_project/login.jpg',
         'https://rlaclghks123.github.io/portfolio/images/ajax_project/purchase.jpg',
-        'https://rlaclghks123.github.io/portfolio/images/ajax_project/kakaoMap.jpg',
+        'https://rlaclghks123.github.io/portfolio/images/ajax_project/kakaomap.jpg',
       ],
 
       projectType: '개인프로젝트',
@@ -149,6 +149,10 @@ export const projectContents = atom({
           title: 'About',
           contents:
             'Vanilla Js를 사용해서 NodeJS의 콘솔창에서 입력을 받아, 출력을 나타내며, Class를 사용하여 모듈화를 했으며, 유지보수 및 가독성을 위해 MVC패턴을 적용했습니다. 또한  프로젝트의 안정감을 더할수 있도록 jest를 활용하여 코드를 Test 했습니다.',
+        },
+        {
+          title: '문제발생과 해결',
+          contents: '11',
         },
 
         {

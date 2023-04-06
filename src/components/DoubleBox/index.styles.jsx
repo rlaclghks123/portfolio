@@ -1,8 +1,7 @@
-import { Children } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -16,7 +15,7 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 80%;
   height: 100%;
   display: flex;
@@ -29,7 +28,7 @@ const Container = styled.div`
   }
 `;
 
-const Box = styled(motion.div)`
+export const Box = styled(motion.div)`
   @media screen and (max-width: 700px) {
     width: 100%;
     height: 47%;
@@ -41,11 +40,12 @@ const Box = styled(motion.div)`
   justify-content: center;
   align-items: center;
 `;
-const LeftBox = styled(Box)``;
 
-const RightBox = styled(Box)``;
+export const LeftBox = styled(Box)``;
 
-const LeftBoxMotion = {
+export const RightBox = styled(Box)``;
+
+export const LeftBoxMotion = {
   start: { scale: 1, x: -200, opacity: 0 },
   end: {
     scale: 1,
@@ -55,7 +55,7 @@ const LeftBoxMotion = {
   },
 };
 
-const RightBoxMotion = {
+export const RightBoxMotion = {
   start: { scale: 1, x: 200, opacity: 0 },
   end: {
     scale: 1,
@@ -64,22 +64,3 @@ const RightBoxMotion = {
     transition: { duration: 0.8 },
   },
 };
-
-function DoubleBox({ children: childrenProp }) {
-  const [leftBox, rightBox] = Children.toArray(childrenProp);
-
-  return (
-    <Wrapper>
-      <Container>
-        <LeftBox variants={LeftBoxMotion} initial="start" animate="end">
-          {leftBox}
-        </LeftBox>
-        <RightBox variants={RightBoxMotion} initial="start" animate="end">
-          {rightBox}
-        </RightBox>
-      </Container>
-    </Wrapper>
-  );
-}
-
-export default DoubleBox;
