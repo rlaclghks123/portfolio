@@ -15,20 +15,21 @@ export const Picture = styled.div`
 export const AboutContents = styled.div`
   @media screen and (max-width: 700px) {
     width: 100%;
-    height: 90%;
+    height: 100%;
     font-size: 8px;
     margin-top: -100px;
+    padding: 10%;
     div {
-      line-height: 13px;
+      line-height: 15px;
     }
   }
+
   height: 100%;
   width: 100%;
   box-sizing: border-box;
   padding: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   color: ${(props) => props.theme.textColor};
   background-color: ${(props) => props.theme.boxBgColor};
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -44,7 +45,7 @@ export const AboutContentsHeader = styled.div`
   height: 50%;
   display: flex;
   flex-direction: column;
-  line-height: 25px;
+  line-height: 20px;
   letter-spacing: 1px;
   p {
     &:last-child {
