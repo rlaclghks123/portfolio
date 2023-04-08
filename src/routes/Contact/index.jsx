@@ -3,6 +3,33 @@ import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 import { LeftBox, RightBox, SendBtn, Message } from './index.styles';
 
+const InputState = [
+  {
+    labelHtmlFor: 'name',
+    labelTitle: 'Name',
+    inputId: 'name',
+    inputType: 'text',
+    inputName: 'from_name',
+    inputPlaceholder: '이름을 입력해주세요.',
+  },
+  {
+    labelHtmlFor: 'phone',
+    labelTitle: 'Phone',
+    inputId: 'phone',
+    inputType: 'tel',
+    inputName: 'phone',
+    inputPlaceholder: '연락처를 입력해주세요.',
+  },
+  {
+    labelHtmlFor: 'email',
+    labelTitle: 'Email',
+    inputId: 'email',
+    inputType: 'email',
+    inputName: 'email',
+    inputPlaceholder: '메일 주소를 입력해주세요',
+  },
+];
+
 function Contact() {
   const form = useRef();
 
@@ -29,37 +56,20 @@ function Contact() {
       <DoubleBox>
         <LeftBox>
           <ul>
-            <li>
-              <label htmlFor="name">Name</label>
-              <input
-                id="name"
-                type="text"
-                name="from_name"
-                placeholder="이름을 입력해주세요."
-                required
-              />
-            </li>
-            <li>
-              <label htmlFor="phone">Phone</label>
-              <input
-                id="phone"
-                type="tel"
-                name="phone"
-                placeholder="연락처를 입력해주세요."
-                required
-              />
-            </li>
-
-            <li>
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="메일 주소를 입력해주세요"
-                required
-              />
-            </li>
+            {InputState.map((item, i) => {
+              return (
+                <li key={i}>
+                  <label htmlFor={item.labelHtmlFor}>{item.labelTitle}</label>
+                  <input
+                    id={item.inputId}
+                    type={item.inputType}
+                    name={item.inputName}
+                    placeholder={item.inputPlaceholder}
+                    required
+                  />
+                </li>
+              );
+            })}
           </ul>
         </LeftBox>
         <RightBox>

@@ -33,6 +33,7 @@ const BlackWhiteBtn = styled.div`
 
 function App() {
   const [BlackAndWhiteBtn, setBlackAndWhiteBtn] = useState(true);
+
   const togleBtn = () => {
     setBlackAndWhiteBtn((prev) => !prev);
   };
