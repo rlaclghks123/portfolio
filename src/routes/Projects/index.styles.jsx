@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const ItemImg = styled(motion.img)`
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1100px) {
     width: 200px;
     height: 90%;
   }
@@ -11,7 +11,7 @@ export const ItemImg = styled(motion.img)`
 `;
 
 export const TitleImg = styled(ItemImg)`
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1100px) {
     width: 100%;
     height: 80%;
   }
@@ -21,7 +21,7 @@ export const TitleImg = styled(ItemImg)`
 `;
 
 export const ProjectsBox = styled.div`
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1100px) {
     font-size: 10px;
   }
   width: 60%;
@@ -40,7 +40,7 @@ export const ProjectsListTitle = styled.div`
 
   span {
     &:first-child {
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 1100px) {
         font-size: 18px;
       }
       font-size: 25px;

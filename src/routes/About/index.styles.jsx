@@ -13,6 +13,10 @@ export const Picture = styled.div`
 `;
 
 export const AboutContents = styled.div`
+  @media screen and (max-width: 1100px) {
+    font-size: 13px;
+  }
+
   @media screen and (max-width: 700px) {
     width: 100%;
     height: 100%;
