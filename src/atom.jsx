@@ -236,6 +236,18 @@ export const projectContents = atom({
           },
         },
         {
+          title: '회고 보러가기',
+          contents: {
+            url: 'https://velog.io/@rlaclghks123/%ED%9A%8C%EA%B3%A0-CSS-%EC%84%B1%EC%9E%A5%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%84%B1%EC%9E%A5%ED%95%9C-%EB%B6%80%EB%B6%84',
+          },
+        },
+
+        {
+          title: '문제발생과 해결 및 회고',
+          contents: `회고 목록 ⇒ 프로젝트 진행 이유, 궁금했던 부분, 프로젝트를 통해 성장한 부분, 직접 css를 구현해보기, 삽질했던 부분 으로 구성되어 있습니다.`,
+        },
+
+        {
           title: 'About',
           contents:
             'HTML과 CSS & SCSS에 대한 지식 습득 및 다양한 사이트들을 직접 클론코딩 해보며 진행한 개인프로젝트',
@@ -244,7 +256,7 @@ export const projectContents = atom({
         {
           title: '배운점',
           contents:
-            'CSS의 Flex, Grid에 대해 이해하고, 실제로 적용해보며 CSS를 다루는데 있어서 많이 익숙해졌습니다.',
+            'CSS의 Flex, Grid에 대해 이해하고, 실제로 적용해보며 CSS를 다루는데 있어서 많이 익숙해졌습니다. 또한 SCSS 용법을 숙지할 수 있었고, Gulp를 활용하여 SCSS를 CSS로 Build하는 법을 알 수 있었습니다',
         },
 
         {

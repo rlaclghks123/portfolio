@@ -21,7 +21,9 @@ import {
 const CONTENT_TYPE = {
   video: (src) => <PreviewVideo src={src} autoPlay />,
   img: (src) => <PreviewImg src={src} />,
-  url: (src, content) => <BlankUrl onClick={() => window.open(src, '_blank')}>{content}</BlankUrl>,
+  url: (src, contents) => (
+    <BlankUrl onClick={() => window.open(src, '_blank')}>{contents}</BlankUrl>
+  ),
   contents: (contents) => <span>{contents}</span>,
 };
 
@@ -53,7 +55,7 @@ function Aside() {
                     ) : (
                       <div style={{ width: '85%' }}>
                         {item.contents.url
-                          ? CONTENT_TYPE.url(item.contents.url, `프로젝트 이동하기 <=`)
+                          ? CONTENT_TYPE.url(item.contents.url, `이동하기 <=`)
                           : CONTENT_TYPE.contents(item.contents)}
                       </div>
                     )}
