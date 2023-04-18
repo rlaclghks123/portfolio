@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+export const modalVar = {
+  hidden: { opacity: 0, x: 300 },
+  visible: { opacity: 1, x: -100, transition: { duration: 0.5 } },
+};
+
 export const Wrapper = styled(motion.div)`
   background-color: ${(props) => props.theme.bgColor};
   position: absolute;
-  right: 0px;
+  right: -100px;
   top: 0px;
-  width: 40%;
+  width: 50%;
   height: 100%;
   z-index: 31;
   background-color: ${(props) => props.theme.boxBgColor};
   color: ${(props) => props.theme.textColor};
 `;
-
-export const modalVar = {
-  hidden: { opacity: 0, x: 300 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
 
 export const DarkBgColorAtModal = styled.div`
   left: 0;
@@ -31,10 +31,14 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 7% 10%;
+  padding: 5% 10% 0% 10%;
 `;
 
 export const Header = styled.div`
+  @media screen and (max-width: 900px) {
+    font-size: 12px;
+  }
+
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -55,7 +59,7 @@ export const Header = styled.div`
 
 export const Main = styled.div`
   width: 100%;
-  height: 75%;
+  height: 70%;
   overflow: scroll;
   margin: 3% 0;
 
@@ -75,6 +79,19 @@ export const Main = styled.div`
 
 export const MainContentsList = styled.div`
   margin-bottom: 7%;
+
+  @media screen and (max-width: 900px) {
+    div {
+      &:last-child {
+        font-size: 10px;
+        margin-bottom: 50px;
+      }
+    }
+    & img,
+    video {
+      height: 50vw;
+    }
+  }
 `;
 
 export const MainContentsListTitle = styled.div`
@@ -107,6 +124,9 @@ export const PreviewVideo = styled.video`
 `;
 
 export const Footer = styled.div`
+  @media screen and (max-width: 900px) {
+    font-size: 11px;
+  }
   width: 100%;
   padding: 2%;
   box-sizing: border-box;
