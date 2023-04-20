@@ -14,12 +14,12 @@ function Carousel({
   const itemCount = Children.toArray(children).length;
   const translateXAmountLimit = itemCount * itemWidth;
 
-  const onClickLeft = () => {
+  const onClickLeft = useCallback(() => {
     const newTranslateXAmount = (translateXAmount + itemWidth) % translateXAmountLimit;
     setTranslateXAmount(
       (newTranslateXAmount > 0 ? -translateXAmountLimit : 0) + newTranslateXAmount
     );
-  };
+  }, [translateXAmount, itemWidth, translateXAmountLimit]);
 
   const onClickRight = useCallback(() => {
     setTranslateXAmount((translateXAmount - itemWidth) % translateXAmountLimit);

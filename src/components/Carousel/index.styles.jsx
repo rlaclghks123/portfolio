@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CarouselContainer = styled.div`
   @media screen and (max-width: 700px) {
-    width: 200px;
+    width: 300px;
     height: 90%;
   }
   width: 400px;
