@@ -19,13 +19,10 @@ import {
 
 function Projects() {
   const [hoverPictureId, setHoverPictureId] = useState(-1);
-
   const [hoverArrow, setHoverArrow] = useState(-1);
-
   const [hoverData, setHoverData] = useState({});
 
   const [projectDetailId, setprojectDetailId] = useRecoilState(projectDetailIdAtom);
-
   const projects = useRecoilState(projectContents);
 
   const handleEnter = useCallback((e) => {

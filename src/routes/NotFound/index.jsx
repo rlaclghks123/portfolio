@@ -1,4 +1,25 @@
-import { Box, Content } from './index.styles';
+import styled from 'styled-components';
+
+const Box = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Content = styled.div`
+  @media screen and (max-width: 700px) {
+    font-size: 13px;
+  }
+  width: 50%;
+  height: 30px;
+  font-size: 25px;
+  text-align: center;
+  p {
+    margin-top: 15px;
+  }
+`;
 
 function NotFound() {
   return (
