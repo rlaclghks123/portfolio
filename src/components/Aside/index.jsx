@@ -46,19 +46,14 @@ function Aside() {
                 <MainContentsList key={index}>
                   <MainContentsListTitle>{item.title}</MainContentsListTitle>
                   <MainContentsListContents>
-                    {item.contents.video || item.contents.img ? (
-                      item.contents.video ? (
-                        CONTENT_TYPE.video(item.contents.video)
-                      ) : (
-                        CONTENT_TYPE.img(item.contents.img)
-                      )
-                    ) : (
-                      <div style={{ width: '85%' }}>
-                        {item.contents.url
-                          ? CONTENT_TYPE.url(item.contents.url, `이동하기 <=`)
-                          : CONTENT_TYPE.contents(item.contents)}
-                      </div>
-                    )}
+                    {item.video && CONTENT_TYPE.video(item.video)}
+                    {item.img && CONTENT_TYPE.img(item.img)}
+                    <ul>
+                      {item.contents.map((list, i) => {
+                        return <li key={i}>{list}</li>;
+                      })}
+                    </ul>
+                    {item.url && CONTENT_TYPE.url(item.url, '이동하기 <=')}
                   </MainContentsListContents>
                 </MainContentsList>
               );

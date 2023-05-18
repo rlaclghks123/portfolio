@@ -1,56 +1,61 @@
 import styled from 'styled-components';
+import { media } from '../../constants/sizeConstants';
 
 export const Picture = styled.div`
-  @media screen and (max-width: 700px) {
-    height: 50%;
-  }
-  width: 80%;
-  height: 80%;
+  ${media.tablet` height: 50%;`};
+  width: 100%;
+  height: 100%;
   background-image: url('https://rlaclghks123.github.io/portfolio/images/bgImg.JPG');
   background-position: center;
   background-size: cover;
   border-radius: 10px;
 `;
 
-export const AboutContents = styled.div`
-  @media screen and (max-width: 1100px) {
-    font-size: 13px;
+export const AboutRightBox = styled.div`
+  ${media.tablet` 
+  width: 100%;
+  height: 100%;
+  font-size: 8px;
+  margin-top: -100px;
+  padding: 10%;
+  
+  div {
+    line-height: 15px;
   }
-
-  @media screen and (max-width: 700px) {
-    width: 100%;
-    height: 100%;
-    font-size: 8px;
-    margin-top: -100px;
-    padding: 10%;
-    div {
-      line-height: 15px;
-    }
-  }
+  
+  `};
 
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
-  padding: 10%;
-  display: flex;
-  flex-direction: column;
-  color: ${(props) => props.theme.textColor};
   background-color: ${(props) => props.theme.boxBgColor};
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10%;
+  box-sizing: border-box;
   border-radius: 20px;
+  color: ${(props) => props.theme.textColor};
 
-  & > div {
-    overflow: hidden;
-    width: 100%;
+  section {
+    &:first-child {
+      height: 50%;
+    }
+
+    &:nth-child(2) {
+      height: 20%;
+    }
+
+    &:last-child {
+      height: 30%;
+    }
   }
 `;
 
-export const AboutContentsHeader = styled.div`
-  height: 50%;
+export const AboutRightBoxHeader = styled.section`
   display: flex;
   flex-direction: column;
-  line-height: 20px;
+  justify-content: space-evenly;
+  line-height: 1.4rem;
   letter-spacing: 1px;
+  box-sizing: border-box;
+
   p {
     &:last-child {
       font-weight: 900;
@@ -59,23 +64,26 @@ export const AboutContentsHeader = styled.div`
   }
 `;
 
-export const AboutContentsMain = styled.div`
-  @media screen and (max-width: 700px) {
-    height: 20%;
-    margin-top: 10px;
-  }
+export const AboutRightBoxMain = styled.section`
+  ${media.tablet`
   height: 20%;
+  margin-top: 10px;  
+  `};
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   p {
     margin-bottom: 10px;
   }
 `;
 
-export const AboutContentsFooter = styled.div`
-  @media screen and (max-width: 700px) {
-    margin-top: 10px;
-    height: 30%;
-  }
+export const AboutRightBoxFooter = styled.section`
+  ${media.tablet`
+  margin-top: 10px;
+  height: 30%;  
+  `};
+
   height: 25%;
   svg {
     margin-left: 10px;
@@ -89,21 +97,22 @@ export const AboutContentsFooter = styled.div`
 `;
 
 export const FooterColumn = styled.div`
-  @media screen and (max-width: 700px) {
-    display: flex;
-    align-items: center;
-    height: 15px;
-    margin: 3px 0px;
+  ${media.tablet`
+  display: flex;
+  align-items: center;
+  height: 15px;
+  margin: 3px 0px;
 
-    svg {
-      width: 10px;
-      height: 10px;
-    }
+  svg {
+    width: 10px;
+    height: 10px;
   }
+  `};
 
   display: flex;
   justify-content: space-between;
   margin: 1vh 0;
+
   div {
     width: 33%;
   }

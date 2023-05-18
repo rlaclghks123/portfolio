@@ -1,12 +1,5 @@
 import { Children } from 'react';
-import {
-  Wrapper,
-  Container,
-  LeftBox,
-  RightBox,
-  LeftBoxMotion,
-  RightBoxMotion,
-} from './index.styles';
+import { Wrapper, Container, LeftBoxMotion, RightBoxMotion, Box } from './index.styles';
 
 function DoubleBox({ children: childrenProp }) {
   const [leftBox, rightBox] = Children.toArray(childrenProp);
@@ -14,12 +7,13 @@ function DoubleBox({ children: childrenProp }) {
   return (
     <Wrapper>
       <Container>
-        <LeftBox variants={LeftBoxMotion} initial="start" animate="end">
+        <Box variants={LeftBoxMotion} initial="start" animate="end">
           {leftBox}
-        </LeftBox>
-        <RightBox variants={RightBoxMotion} initial="start" animate="end">
+        </Box>
+
+        <Box variants={RightBoxMotion} initial="start" animate="end">
           {rightBox}
-        </RightBox>
+        </Box>
       </Container>
     </Wrapper>
   );
