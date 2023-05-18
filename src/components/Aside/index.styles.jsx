@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { media } from '../../constants/sizeConstants';
 
 export const modalVar = {
   hidden: { opacity: 0, x: 300 },
@@ -35,10 +36,7 @@ export const Box = styled.div`
 `;
 
 export const Header = styled.div`
-  @media screen and (max-width: 900px) {
-    font-size: 12px;
-  }
-
+  ${media.dektop`font-size: 12px`};
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -79,8 +77,7 @@ export const Main = styled.div`
 
 export const MainContentsList = styled.div`
   margin-bottom: 7%;
-
-  @media screen and (max-width: 900px) {
+  ${media.dektop`
     div {
       &:last-child {
         font-size: 10px;
@@ -91,19 +88,33 @@ export const MainContentsList = styled.div`
     video {
       height: 50vw;
     }
-  }
+  `};
 `;
 
 export const MainContentsListTitle = styled.div`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 900;
+  color: #8e44ad;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
 `;
 
 export const MainContentsListContents = styled.div`
   font-size: 13px;
   letter-spacing: 0.4px;
   line-height: 23px;
+
+  ul {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 20px;
+      list-style: inside;
+    }
+  }
 `;
 
 export const BlankUrl = styled.div`
@@ -124,9 +135,7 @@ export const PreviewVideo = styled.video`
 `;
 
 export const Footer = styled.div`
-  @media screen and (max-width: 900px) {
-    font-size: 11px;
-  }
+  ${media.dektop`font-size: 11px`};
   width: 100%;
   padding: 2%;
   box-sizing: border-box;

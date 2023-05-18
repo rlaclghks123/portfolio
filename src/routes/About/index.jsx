@@ -2,12 +2,12 @@ import React from 'react';
 import DoubleBox from '../../components/DoubleBox';
 import {
   Picture,
-  AboutContents,
-  AboutContentsHeader,
-  AboutContentsMain,
-  AboutContentsFooter,
   FooterColumn,
   Url,
+  AboutRightBox,
+  AboutRightBoxHeader,
+  AboutRightBoxMain,
+  AboutRightBoxFooter,
 } from './index.styles';
 
 const FooterColumnState = [
@@ -49,23 +49,24 @@ function About() {
     <DoubleBox>
       <Picture />
 
-      <AboutContents>
-        <AboutContentsHeader>
-          <p>
+      <AboutRightBox>
+        <AboutRightBoxHeader>
+          <div>
             기본을 건너뛰는 사람은 모래 위에 집을 짓는 사람과 같고, 기본을 지키는 사람은 튼튼한 기초
             위에 건물을 세운 사람과 같다고 합니다.
-          </p>
-          <br></br>
-          <p> 안녕하세요. 어떤 태풍이 불어도 무너지지 않도록</p>
-          <p>기본기를 탄탄하게 공부중인 김치환입니다.</p>
-        </AboutContentsHeader>
+          </div>
+          <div>
+            <p>안녕하세요. 어떤 태풍이 불어도 무너지지 않도록</p>
+            <p>기본기를 탄탄하게 공부중인 김치환입니다.</p>
+          </div>
+        </AboutRightBoxHeader>
 
-        <AboutContentsMain>
+        <AboutRightBoxMain>
           <p>Email : rlaclghks123@naver.com</p>
           <p>Phone : 010-9321-5131</p>
-        </AboutContentsMain>
+        </AboutRightBoxMain>
 
-        <AboutContentsFooter>
+        <AboutRightBoxFooter>
           {FooterColumnState.map((item, i) => {
             return (
               <FooterColumn key={i}>
@@ -83,8 +84,8 @@ function About() {
               </FooterColumn>
             );
           })}
-        </AboutContentsFooter>
-      </AboutContents>
+        </AboutRightBoxFooter>
+      </AboutRightBox>
     </DoubleBox>
   );
 }
