@@ -91,9 +91,9 @@ function Projects() {
                   animate={'end'}
                 >
                   {hoverArrow === index && (
-                    <Arrow>
+                    <span>
                       <FontAwesomeIcon icon={faArrowRight} />
-                    </Arrow>
+                    </span>
                   )}
                   <span>{item.title}</span>
                   <span>{item.projectType}</span>

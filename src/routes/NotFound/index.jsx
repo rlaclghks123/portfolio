@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../constants/sizeConstants';
 
 const Box = styled.div`
   width: 100%;
@@ -9,9 +10,8 @@ const Box = styled.div`
 `;
 
 const Content = styled.div`
-  @media screen and (max-width: 700px) {
-    font-size: 13px;
-  }
+  ${media.tablet`font-size: 13px;`};
+
   width: 50%;
   height: 30px;
   font-size: 25px;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { media } from '../../constants/sizeConstants';
 
 export const Wrapper = styled(motion.div)`
   width: 100%;
@@ -37,9 +38,10 @@ export const Logo = styled(motion.div)`
 `;
 
 export const TitleColumns = styled.ul`
-  @media screen and (max-width: 700px) {
-    width: 40%;
-  }
+  ${media.tablet`
+  width: 40%;
+  `};
+
   width: 27%;
   height: 100%;
   display: flex;

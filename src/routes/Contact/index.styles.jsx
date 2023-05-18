@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import { media } from '../../constants/sizeConstants';
 
 export const Box = styled.div`
-  @media screen and (max-width: 700px) {
-    height: 80%;
-    input {
-      &::placeholder {
-        font-size: 10px;
-      }
+  ${media.tablet`
+  height: 80%;
+  input {
+    &::placeholder {
+      font-size: 10px;
     }
-  }
+  }  
+  `};
+
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -38,9 +40,7 @@ export const LeftBox = styled(Box)`
     align-items: center;
 
     li {
-      @media screen and (max-width: 700px) {
-        padding: 0px;
-      }
+      ${media.tablet`padding: 0px;`};
       cursor: pointer;
       width: 60%;
       display: flex;
@@ -81,11 +81,12 @@ export const RightBox = styled(Box)`
 `;
 
 export const SendBtn = styled.input`
-  @media screen and (max-width: 700px) {
-    bottom: 5%;
-    left: 30%;
-    right: 30%;
-  }
+  ${media.tablet`
+  bottom: 5%;
+  left: 30%;
+  right: 30%;  
+  `};
+
   cursor: pointer;
   border: none;
   position: absolute;

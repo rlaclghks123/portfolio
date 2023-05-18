@@ -1,30 +1,31 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { media } from '../../constants/sizeConstants';
 
 export const ItemImg = styled(motion.img)`
-  @media screen and (max-width: 700px) {
-    width: 300px;
-    height: 90%;
-    margin-right: 100px;
-  }
+  ${media.tablet`
+  width: 300px;
+  height: 90%;
+  margin-right: 100px;
+    `};
+
   width: 400px;
   height: 70vh;
 `;
 
 export const TitleImg = styled(ItemImg)`
-  @media screen and (max-width: 700px) {
-    width: 100%;
-    height: 80%;
-  }
+  ${media.tablet`
+  width: 100%;
+  height: 80%;  
+  `};
+
   border-radius: 10px;
   width: 70vh;
   height: 50vh;
 `;
 
 export const ProjectsBox = styled.div`
-  @media screen and (max-width: 700px) {
-    font-size: 10px;
-  }
+  ${media.tablet`font-size: 10px;`};
   width: 60%;
   height: 80%;
   overflow: hidden;
@@ -41,9 +42,8 @@ export const ProjectsListTitle = styled.div`
 
   span {
     &:first-child {
-      @media screen and (max-width: 1100px) {
-        font-size: 18px;
-      }
+      ${media.desktop`font-size: 18px;
+  `};
       font-size: 25px;
       font-weight: 900;
     }
