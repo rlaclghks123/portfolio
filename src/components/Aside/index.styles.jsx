@@ -36,7 +36,7 @@ export const Box = styled.div`
 `;
 
 export const Header = styled.div`
-  ${media.dektop`font-size: 12px`};
+  ${media.desktop`font-size: 12px`};
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -77,7 +77,7 @@ export const Main = styled.div`
 
 export const MainContentsList = styled.div`
   margin-bottom: 7%;
-  ${media.dektop`
+  ${media.desktop`
     div {
       &:last-child {
         font-size: 10px;
@@ -135,7 +135,7 @@ export const PreviewVideo = styled.video`
 `;
 
 export const Footer = styled.div`
-  ${media.dektop`font-size: 11px`};
+  ${media.desktop`font-size: 11px`};
   width: 100%;
   padding: 2%;
   box-sizing: border-box;
