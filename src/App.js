@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Projects from './routes/Projects';
 import Contact from './routes/Contact';
 import NotFound from './routes/NotFound';
+import { CONTACT_URL, HOME_URL, PROJECTS_URL, REST_URL } from './constants/urlConstants';
 
 const BlackWhiteBtn = styled.div`
   border-radius: 20px;
@@ -24,6 +25,7 @@ const BlackWhiteBtn = styled.div`
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
   border: 1px solid black;
+  cursor: pointer;
 
   &:hover {
     background-color: ${(props) => props.theme.navColor};
@@ -43,15 +45,13 @@ function App() {
       <BrowserRouter>
         <Cover />
         <NavBar />
-        <BlackWhiteBtn onClick={togleBtn} style={{ cursor: 'pointer' }}>
-          다크 모드
-        </BlackWhiteBtn>
+        <BlackWhiteBtn onClick={togleBtn}>다크 모드</BlackWhiteBtn>
 
         <Routes>
-          <Route path="/portfolio" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path={HOME_URL} element={<About />} />
+          <Route path={PROJECTS_URL} element={<Projects />} />
+          <Route path={CONTACT_URL} element={<Contact />} />
+          <Route path={REST_URL} element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
