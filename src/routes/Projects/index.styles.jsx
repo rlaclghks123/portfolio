@@ -15,13 +15,13 @@ export const ItemImg = styled(motion.img)`
 
 export const TitleImg = styled(ItemImg)`
   ${media.tablet`
-  width: 100%;
+  width: 80%;
   height: 80%;  
+  margin:0 auto;
   `};
 
+  width: 100%;
   border-radius: 10px;
-  width: 70vh;
-  height: 50vh;
 `;
 
 export const ProjectsBox = styled.div`
