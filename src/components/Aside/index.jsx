@@ -58,17 +58,15 @@ function Aside() {
                         );
                       })}
                     </ul>
-                    {item.url && CONTENT_TYPE.url(item.url, '이동하기 <=')}
+                    {item.url && CONTENT_TYPE.url(item.url, '보러가기 <')}
                   </MainContentsListContents>
                 </MainContentsList>
               );
             })}
           </Main>
 
-          <Footer>
-            <div onClick={() => window.open(projects[projectDetailId].githubUrl, '_blank')}>
-              GitHub로 이동하기
-            </div>
+          <Footer onClick={() => window.open(projects[projectDetailId].githubUrl, '_blank')}>
+            <div>GitHub로 이동하기</div>
           </Footer>
         </Box>
       </Wrapper>

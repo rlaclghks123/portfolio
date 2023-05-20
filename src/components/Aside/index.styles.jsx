@@ -117,13 +117,17 @@ export const MainContentsListContents = styled.div`
       img {
         margin: 30px 0px;
         width: 100%;
-        height: 300px;
+        height: 700px;
       }
     }
   }
 `;
 
 export const BlankUrl = styled.div`
+  font-weight: 900;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+
   &:hover {
     opacity: 0.5;
     cursor: pointer;
