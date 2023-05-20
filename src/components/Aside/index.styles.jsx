@@ -113,6 +113,12 @@ export const MainContentsListContents = styled.div`
     li {
       margin-bottom: 20px;
       list-style: inside;
+
+      img {
+        margin: 30px 0px;
+        width: 100%;
+        height: 300px;
+      }
     }
   }
 `;

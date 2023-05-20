@@ -50,7 +50,12 @@ function Aside() {
                     {item.img && CONTENT_TYPE.img(item.img)}
                     <ul>
                       {item.contents.map((list, i) => {
-                        return <li key={i}>{list}</li>;
+                        return (
+                          <li key={i}>
+                            <span>{list.text}</span>
+                            {list.img && <img src={list.img} alt="사진"></img>}
+                          </li>
+                        );
                       })}
                     </ul>
                     {item.url && CONTENT_TYPE.url(item.url, '이동하기 <=')}
