@@ -125,6 +125,7 @@ export const MainContentsListContents = styled.div`
 
 export const BlankUrl = styled.div`
   font-weight: 900;
+  color: ${(props) => props.theme.mainColor};
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
 
