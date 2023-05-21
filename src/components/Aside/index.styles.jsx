@@ -95,7 +95,7 @@ export const MainContentsListTitle = styled.div`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 900;
-  color: #8e44ad;
+  color: ${(props) => props.theme.mainColor};
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
 `;

@@ -59,7 +59,7 @@ export const AboutRightBoxHeader = styled.section`
   p {
     &:last-child {
       font-weight: 900;
-      color: rgb(140, 122, 230);
+      color: ${(props) => props.theme.mainColor};
     }
   }
 `;
