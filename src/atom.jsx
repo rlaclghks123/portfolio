@@ -42,6 +42,7 @@ export const projectContents = atom({
               text: '로그인시 보안 강화, 사용자의 경험을 개선하기 위해 OAuth를 통한 Naver, KaKao 로그인 기능 구현중…',
             },
           ],
+          url: 'https://velog.io/@rlaclghks123/%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84-%EB%A1%9C%EA%B7%B8%EC%9D%B8',
         },
         {
           title: '프로젝트를 통해 배운점',
