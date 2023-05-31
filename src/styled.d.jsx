@@ -4,7 +4,7 @@ export const DefaultTheme = {
   navColor: '#2c3e50',
   textColor: 'black',
   boxBgColor: 'white',
-  boxShadow: '0px 0px 5px rgb(0, 0, 0, 0.7)',
+  boxShadow: '0px 0px 5px rgb(0, 0, 0, 0.2)',
   mainColor: 'rgb(255, 126, 54)',
 };
 
@@ -14,6 +14,6 @@ export const DarkTheme = {
   navColor: 'rgba(236, 240, 241,1.0)',
   textColor: 'rgba(236, 240, 241,1.0)',
   boxBgColor: '#353b48',
-  boxShadow: '0px 0px 5px rgb(255, 255, 255, 0.7)',
+  boxShadow: '0px 0px 5px rgb(255, 255, 255, 0.2)',
   mainColor: 'rgb(255, 126, 54)',
 };

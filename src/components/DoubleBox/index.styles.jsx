@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background: ${(props) => props.theme.bgColor};
-  margin-top: 50px;
   z-index: 2;
   box-sizing: border-box;
 `;
@@ -18,8 +17,11 @@ export const Container = styled.div`
   width: 80%;
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 30px 0px;
+
+  padding-top: 50px;
+  box-sizing: border-box;
 
   ${media.tablet`
     display: flex;
@@ -34,8 +36,9 @@ export const Box = styled(motion.div)`
     `};
 
   width: 50%;
-  height: 70%;
+  height: 65%;
   margin: 2%;
+
   display: flex;
   justify-content: center;
   align-items: center;

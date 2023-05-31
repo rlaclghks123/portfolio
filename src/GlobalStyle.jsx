@@ -4,10 +4,8 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
     ${reset};
     body{
-        padding: 0;
-        margin: 0;
+        background-color:  rgba(236, 240, 241,1.0);
         font-family:serif;
-        overflow: hidden;
         text-decoration: none;
     };
     a{
