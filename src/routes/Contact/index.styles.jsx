@@ -4,6 +4,7 @@ import { media } from '../../constants/sizeConstants';
 export const Box = styled.div`
   ${media.tablet`
   height: 80%;
+
   input {
     &::placeholder {
       font-size: 10px;
