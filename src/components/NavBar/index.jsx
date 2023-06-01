@@ -8,6 +8,8 @@ const navTitle = [
   { url: '/portfolio', title: 'About' },
   { url: '/projects', title: 'Projects' },
   { url: '/contact', title: 'Contact' },
+  { url: 'https://velog.io/@rlaclghks123/series', title: 'Velog' },
+  { url: 'https://github.com/rlaclghks123', title: 'Github' },
 ];
 
 const navBar_SVG = [
@@ -57,12 +59,21 @@ function NavBar() {
       <TitleColumns>
         {navTitle.map((info, index) => (
           <Title key={`title-${index}`} onClick={() => setCurrentUrl(info.url)}>
-            <Link to={info.url}>
-              <TitleName>
-                {info.title}
-                {info.url === currentUrl && <CurrentLocation layoutId="CurrentLocation" />}
-              </TitleName>
-            </Link>
+            {index <= 2 ? (
+              <Link to={info.url}>
+                <TitleName>
+                  {info.title}
+                  {info.url === currentUrl && <CurrentLocation layoutId="CurrentLocation" />}
+                </TitleName>
+              </Link>
+            ) : (
+              <a href={info.url}>
+                <TitleName>
+                  {info.title}
+                  {info.url === currentUrl && <CurrentLocation layoutId="CurrentLocation" />}
+                </TitleName>
+              </a>
+            )}
           </Title>
         ))}
       </TitleColumns>
