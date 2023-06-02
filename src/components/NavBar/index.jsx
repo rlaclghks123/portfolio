@@ -7,7 +7,6 @@ import { Wrapper, Logo, TitleColumns, Title, TitleName, CurrentLocation } from '
 const navTitle = [
   { url: '/portfolio', title: 'About' },
   { url: '/projects', title: 'Projects' },
-  { url: '/contact', title: 'Contact' },
   { url: 'https://velog.io/@rlaclghks123/series', title: 'Velog' },
   { url: 'https://github.com/rlaclghks123', title: 'Github' },
 ];
@@ -59,7 +58,7 @@ function NavBar() {
       <TitleColumns>
         {navTitle.map((info, index) => (
           <Title key={`title-${index}`} onClick={() => setCurrentUrl(info.url)}>
-            {index <= 2 ? (
+            {index <= 1 ? (
               <Link to={info.url}>
                 <TitleName>
                   {info.title}
