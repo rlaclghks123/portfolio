@@ -5,13 +5,19 @@ import styled from 'styled-components';
 const AccordionContainer = styled.div`
   overflow: hidden;
   height: 100%;
+  margin: 5px 0px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: ${({ expanded }) => (expanded ? '0px 0px 5px rgba(0,0,0,0.2)' : '')};
+  box-sizing: border-box;
+  transition: box-shadow 0.5s ease-in-out;
 `;
 
 const AccordionDetailsWrapper = styled.div`
   max-height: ${({ expanded, childrenHeight }) => (expanded ? `${childrenHeight}px` : '0px')};
   transition: max-height 0.5s ease-in-out;
   height: 100%;
-  width: 90%;
+  width: 95%;
 `;
 
 const Accordion = ({
@@ -50,7 +56,7 @@ const Accordion = ({
     [expanded, handleChange]
   );
   return (
-    <AccordionContainer {...other}>
+    <AccordionContainer expanded={expanded} {...other}>
       <AccordionContext.Provider value={contextValue}>{summary}</AccordionContext.Provider>
       <AccordionDetailsWrapper expanded={expanded} childrenHeight={childrenHeight}>
         <div ref={childrenRef}>{children}</div>

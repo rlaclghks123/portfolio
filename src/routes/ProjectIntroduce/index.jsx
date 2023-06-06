@@ -29,34 +29,24 @@ function ProjectIntroduce() {
                         <StyleGitHub href={des.githubUrl}>Github 보러가기 &larr;</StyleGitHub>
                       )}
                       <StyleUl>
-                        {des.contents.map(
-                          (content, i) => {
-                            return (
-                              <>
-                                {content.detail ? (
-                                  <Accordion>
-                                    <AccordionSummary
-                                      expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
-                                    >
-                                      {content.title}
-                                    </AccordionSummary>
-                                    {<AccordionDetails>{content.detail}</AccordionDetails>}
-                                  </Accordion>
-                                ) : (
-                                  <li>{content.title}</li>
-                                )}
-                              </>
-                            );
-                          }
-                          // <li key={i}>{content.title}</li>
-
-                          // <Accordion>
-                          //   <AccordionSummary expandIcon={<FontAwesomeIcon icon={faAngleDown} />}>
-                          //     {content.title}
-                          //   </AccordionSummary>
-                          //   {<AccordionDetails>{content.detail}</AccordionDetails>}
-                          // </Accordion>
-                        )}
+                        {des.contents.map((content, i) => {
+                          return (
+                            <>
+                              {content.detail ? (
+                                <Accordion>
+                                  <AccordionSummary
+                                    expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+                                  >
+                                    {content.title}
+                                  </AccordionSummary>
+                                  {<AccordionDetails>{content.detail}</AccordionDetails>}
+                                </Accordion>
+                              ) : (
+                                <li>{content.title}</li>
+                              )}
+                            </>
+                          );
+                        })}
                       </StyleUl>
                       {des.url && <StyleGitHub href={des.url}> Visit</StyleGitHub>}
                     </StyleIntroduceContainer>
@@ -104,8 +94,10 @@ const StyleProjectsMain = styled.div`
 const StyleIntroduceContainer = styled.div`
   margin: 30px 0px;
   padding: 30px 0px;
+
   border-bottom: 0.1px solid ${(props) => props.theme.navColor};
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
 `;
 
 const StyleProjectsMainTitle = styled.div`
@@ -146,5 +138,6 @@ const StyleUl = styled.ul`
 
     list-style-position: inside;
     list-style-type: square;
+    line-height: 30px;
   }
 `;

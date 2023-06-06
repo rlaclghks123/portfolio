@@ -3,16 +3,16 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  height: max-content;
 
   word-break: break-all;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 const Img = styled.img`
   height: 400px;
+  width: 100%;
 `;
 
 const AccordionDetails = ({ children, ...others }) => {
@@ -21,12 +21,19 @@ const AccordionDetails = ({ children, ...others }) => {
       {children.map((item, i) => {
         return (
           <div key={i}>
-            <div>
-              {item.text.map((item, i) => {
-                return <li key={i}>{item}</li>;
-              })}
-              {item.img && <Img src={item.img}></Img>}
-            </div>
+            {item.text.map((item, i) => {
+              return (
+                <li key={i}>
+                  {item.split('\n').map((line, j) => (
+                    <span key={j}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </li>
+              );
+            })}
+            {item.img && <Img src={item.img} alt="사진"></Img>}
           </div>
         );
       })}
