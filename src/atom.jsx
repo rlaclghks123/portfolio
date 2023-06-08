@@ -246,27 +246,15 @@ export const projectContents = atom({
         'https://rlaclghks123.github.io/portfolio/images/todo_list_img/expandToDoList.jpg',
       ],
       projectType: '클론코딩',
-      githubUrl: 'https://github.com/rlaclghks123/momentom-2021',
       languages: ['HTML', 'CSS', 'Vanilla Js'],
       description: [
         {
           title: 'Preview',
           img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/basic.jpg',
-          url: 'https://rlaclghks123.github.io/momentom-2021/',
+          githubUrl: 'https://github.com/rlaclghks123/momentom-2021',
           contents: [],
         },
 
-        {
-          title: '프로젝트를 진행하며 배운점',
-          contents: [
-            { title: 'DOM에 대하여' },
-            { title: 'WebStorage에 대하여' },
-            { title: 'API, AJAX, JSON에 대하여' },
-            { title: 'JavaScript Event에 대해' },
-            { title: '하드코딩, 하드코딩을 피해야 하는 이유' },
-          ],
-          url: 'https://velog.io/@rlaclghks123/%ED%9A%8C%EA%B3%A0-Vanilla-Js%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-ToDoList-%EB%A7%8C%EB%93%A4%EA%B8%B0',
-        },
         {
           title: '프로젝트 구현 기능',
           contents: [
@@ -279,18 +267,87 @@ export const projectContents = atom({
             { title: '메모장 확대, 축소, 창닫기 기능' },
           ],
         },
+
         {
           title: '발생한 문제 및 해결',
           contents: [
             {
               title:
                 '하드코딩으로 인한 localStorage key 값이 다름으로 인해 저장 되지 않은 문제 발생',
-              img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/problem1.jpg',
+              detail: [
+                {
+                  text: [
+                    `localStorage에 저장할때 key값을 하드코딩을 하여 key값의 이름이 달라 값이 저장이 되지 않았던 문제를 겪었습니다. 
+                    큰일은 아닌데, 엄청난 큰일입니다.
+                    "하드코딩을 하지 말고, 상수 처리를 하라" 는 말을 뼈저리게 느끼게 되었습니다.
+                    `,
+                  ],
+                },
+                {
+                  text: [`문제발생`],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/localStorageProblem.jpg',
+                },
+                {
+                  text: [`문제해결`],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/localStorageSolution.jpg',
+                },
+              ],
             },
             {
-              title:
-                'toDoList를 삭제하기 위해 filter 함수를 사용하여 클릭한 li와 toDoList에 있는 li들을 비교해 List를 삭제하려던 중 데이터 타입이 달라 작동하지 않은 문제 발생',
-              img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/problem2.jpg',
+              title: 'toDoList 삭제 되지 않는 문제 발생',
+              detail: [
+                {
+                  text: [
+                    `ToDoList 삭제하는 코드
+
+                    1. 삭제 button을 클릭합니다.
+                    2. 삭제 button의 부모 태그인 li를 찾아줍니다.
+                    3. remove 메소드를 사용하여 li를 제거해줍니다.
+                    4. filter 메서드를 사용하여 기존의 toDos배열과 비교해서, 현재 클릭한 li의 id값과 다른 값들로만 새로운 배열을 toDos에 만들어줍니다.
+                    5. filter한 값을 LocalStorage에 새롭게 저장해줍니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove1.jpg',
+                },
+                {
+                  text: [
+                    `문제 발생
+
+                    1. 삭제는 잘 되지만, 새로고침시 삭제한 list가 다시 나타나는 문제가 발생
+                    → localStorage를 확인 해보니 list가 삭제되었음에도, localStorage에 삭제되지 않음을 확인할 수 있습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove2.jpg',
+                },
+
+                {
+                  text: [
+                    `에러 발견
+                    list를 삭제 후 filter 과정에서 문제가 발생한 것 같아 filter함수에서 비교하는 id값을 console.log로 확인 해보니 id값들의 type이 다른걸 알 수 있었습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove3.jpg',
+                },
+
+                {
+                  text: [
+                    `에러 해결
+                    따라서 사진과 같이 li의 id값을 Number 형식으로 바꿔주니 잘 작동했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove4.jpg',
+                },
+
+                {
+                  text: [
+                    `궁금증
+                    분명 Number 타입의 숫자 값을 저장해 줬는데 왜 li의 id 값은 문자열로 되어있을까요?
+                    → HTML에서 id 속성값은 문자열 형태로 지정된다고 합니다. 
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove5.jpg,',
+                },
+              ],
             },
           ],
         },
