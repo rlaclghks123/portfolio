@@ -345,7 +345,7 @@ export const projectContents = atom({
                     → HTML에서 id 속성값은 문자열 형태로 지정된다고 합니다. 
                     `,
                   ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove5.jpg,',
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove5.jpg',
                 },
               ],
             },
@@ -354,16 +354,85 @@ export const projectContents = atom({
         {
           title: '클론코딩 후 스스로 개선점 및 추가기능',
           contents: [
-            { title: '빈 값도 toDoList에 추가되는 문제를 개선 => trim 메서드를 활용하여 해결' },
             {
-              title:
-                '삭제 버튼 클릭시 바로 삭제 되는 부분 개선 ⇒ 사용자 입장에서 불편함을 느낄 수 있다고 생각하여 confirm 메소드 추가',
+              title: '빈 값도 toDoList에 추가되는 문제를 개선',
+              detail: [
+                {
+                  text: [
+                    `불편함 발생 : ToDoList를 추가하는 과정에서 빈 값도 추가되는, 사용자 입장에서 불편함을 느낄 수 있다고 생각했습니다.
+                     빈 값을 입력 받으면 alert를 통해 사용자에게 "값을 입력해주세요" 라는 요청 문구를 통해 알려주고, ToDoList에 값을 추가하지 않도록 기능을 추가했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/emptyValImg.jpg',
+                },
+                {
+                  text: [
+                    `불편함 해결 : trim() 함수를 사용하여 입력값의 앞 뒤 공백을 제거한뒤, if 문을 통해 입력받은 값이 빈값('')일 경우 alert로 사용자에게 알려주고, 종료하여 값을 추가하지 않도록 구현했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/emptyAlertImg.jpg',
+                },
+              ],
             },
-            { title: 'Event에 친숙 해지기 위해 메모장 전체화면, 축소,  창닫기 3가지 기능 추가' },
+            {
+              title: '삭제 버튼 클릭시 바로 삭제 되는 부분 개선',
+              detail: [
+                {
+                  text: [
+                    `불편함 발생 :  X 버튼 클릭 시 바로 삭제되도록 구현했었습니다. 그러나 실수로 X 버튼을 누를 수 있으므로 사용자 관점에서 불편함을 느낄 수 있다고 생각했습니다.
+                    `,
+                  ],
+                },
+                {
+                  text: [
+                    `불편함 해결 : confirm 메소드를 통해 삭제 시 확인 요청을 받도록 수정했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/confirmMsgImg',
+                },
+              ],
+            },
+            {
+              title: '메모장 전체화면, 축소, 창닫기 3가지 기능 추가',
+              detail: [
+                {
+                  text: [
+                    `Event에 익숙해지기 위해 Click Event를 통해 전체화면, 축소, 창 닫기 3가지 기능을 구현해 봤습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/originMemo.jpg',
+                },
+
+                {
+                  text: [
+                    `창닫기
+                     click Event를 사용하여 메모장의 빨간버튼을 클릭하면 메모장이 닫아지도록 구현했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/closedMemo.jpg',
+                },
+                {
+                  text: [
+                    `전체화면
+                     click Event를 사용하여 메모장의 초록버튼을 클릭하면 메모장이 확대 되도록 구현했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/zoomInMemo.jpg',
+                },
+                {
+                  text: [
+                    `축소
+                     click Event를 사용하여 메모장의 노란버튼을 클릭하면 확대 되어있던 메모장이 축소 되도록 구현했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/originMemo.jpg',
+                },
+              ],
+            },
           ],
         },
         {
-          title: '회고',
+          title: 'ToDoList 회고',
           contents: [],
           url: 'https://velog.io/@rlaclghks123/%ED%9A%8C%EA%B3%A0-Vanilla-Js%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-ToDoList-%EB%A7%8C%EB%93%A4%EA%B8%B0',
         },
