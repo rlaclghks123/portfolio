@@ -24,24 +24,24 @@ function ProjectIntroduce() {
 
   return (
     <StyleContainer>
-      {projects[0].map((item) => {
+      {projects[0].map((item, projectIdx) => {
         return (
           item.title === params['*'] && (
-            <StyleProjectsWrapper>
+            <StyleProjectsWrapper key={`projects-${projectIdx}`}>
               <StyleTitle>{item.title}</StyleTitle>
               <StyleProjectsMain>
-                {item.description.map((des, i) => {
+                {item.description.map((des, desIdx) => {
                   return (
-                    <StyleIntroduceContainer>
+                    <StyleIntroduceContainer key={`description-${desIdx}`}>
                       <StyleProjectsMainTitle>{des.title}</StyleProjectsMainTitle>
                       {des.img && <StyleImg src={des.img} />}
                       {des.githubUrl && (
                         <StyleGitHub href={des.githubUrl}>Github 보러가기 &larr;</StyleGitHub>
                       )}
                       <StyleUl>
-                        {des.contents.map((content, i) => {
+                        {des.contents.map((content, contentsIdx) => {
                           return (
-                            <>
+                            <div key={`contents-${contentsIdx}`}>
                               {content.detail ? (
                                 <Accordion>
                                   <AccordionSummary
@@ -54,11 +54,11 @@ function ProjectIntroduce() {
                               ) : (
                                 <li>{content.title}</li>
                               )}
-                            </>
+                            </div>
                           );
                         })}
                       </StyleUl>
-                      {des.url && <StyleGitHub href={des.url}> Visit</StyleGitHub>}
+                      {des.url && <StyleGitHub href={des.url}> Visit &larr;</StyleGitHub>}
                     </StyleIntroduceContainer>
                   );
                 })}
