@@ -388,7 +388,7 @@ export const projectContents = atom({
                     `불편함 해결 : confirm 메소드를 통해 삭제 시 확인 요청을 받도록 수정했습니다.
                     `,
                   ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/confirmMsgImg',
+                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/confirmMsgImg.jpg',
                 },
               ],
             },
