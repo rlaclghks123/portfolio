@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../constants/sizeConstants';
 
 export const Picture = styled.div`
-  ${media.tablet` height: 50%;`};
+  ${media.tablet` height: 70%;`};
   width: 100%;
   height: 100%;
   background-image: url('https://rlaclghks123.github.io/portfolio/images/bgImg.JPG');

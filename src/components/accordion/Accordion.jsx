@@ -11,6 +11,7 @@ const AccordionContainer = styled.div`
   box-shadow: ${({ expanded }) => (expanded ? '0px 0px 5px rgba(0,0,0,0.2)' : '')};
   box-sizing: border-box;
   transition: box-shadow 0.5s ease-in-out;
+  line-height: 30px;
 `;
 
 const AccordionDetailsWrapper = styled.div`

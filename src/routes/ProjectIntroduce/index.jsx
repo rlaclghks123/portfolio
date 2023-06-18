@@ -1,6 +1,6 @@
 import { projectContents } from '../../atom';
 import { useRecoilState } from 'recoil';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Accordion from '../../components/accordion/Accordion.jsx';
 import AccordionSummary from '../../components/accordion/AccordionSummary.jsx';
 import AccordionDetails from '../../components/accordion/AccordionDetails.jsx';

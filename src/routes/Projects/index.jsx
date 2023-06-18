@@ -19,9 +19,8 @@ function Projects() {
         <StyleProjectsMain>
           {projects[0].map((item, i) => {
             return (
-              <Link to={`/projects/${item.title}`}>
+              <Link to={`/projects/${item.title}`} key={`item-${i}`}>
                 <ProjectItem
-                  key={i}
                   images={item.images}
                   title={item.title}
                   languageList={item.languages}

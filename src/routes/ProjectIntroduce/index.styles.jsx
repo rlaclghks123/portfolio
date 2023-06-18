@@ -6,11 +6,13 @@ export const StyleContainer = styled.div`
   background: ${(props) => props.theme.bgColor};
   font-family: 'NanumSquare', '맑은 고딕', sans-serif;
 `;
+
 export const StyleProjectsWrapper = styled.div`
   margin: 50px 20% 0px 20%;
 
   padding: 50px 0px;
 `;
+
 export const StyleTitle = styled.div`
   color: ${(props) => props.theme.textColor};
 
@@ -22,9 +24,11 @@ export const StyleTitle = styled.div`
   padding-bottom: 20px;
   border-bottom: 1px solid ${(props) => props.theme.navColor};
 `;
+
 export const StyleProjectsMain = styled.div`
   margin-top: 20px;
 `;
+
 export const StyleIntroduceContainer = styled.div`
   margin: 30px 0px;
   padding: 30px 0px;
@@ -33,6 +37,7 @@ export const StyleIntroduceContainer = styled.div`
 
   font-family: Georgia, 'Times New Roman', Times, serif;
 `;
+
 export const StyleProjectsMainTitle = styled.div`
   font-size: 24px;
   font-weight: 900;
@@ -41,12 +46,14 @@ export const StyleProjectsMainTitle = styled.div`
 
   margin-bottom: 30px;
 `;
+
 export const StyleImg = styled.img`
   width: 100%;
   height: 30rem;
 
   margin-bottom: 20px;
 `;
+
 export const StyleGitHub = styled.a`
   color: ${(props) => props.theme.textColor};
   width: fit-content;
@@ -59,6 +66,7 @@ export const StyleGitHub = styled.a`
     color: ${(props) => props.theme.boxBgColor};
   }
 `;
+
 export const StyleUl = styled.ul`
   margin: 20px 0px;
   color: ${(props) => props.theme.textColor};

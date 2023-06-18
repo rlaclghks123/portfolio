@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+import { media } from '../../constants/sizeConstants';
 
 export const StyleContainer = styled.div`
   width: 100%;
   min-height: 93vh;
   background: ${(props) => props.theme.bgColor};
+  box-sizing: border-box;
 `;
 
 export const StyleProjectsWrapper = styled.div`
   margin: 50px 20% 0px 20%;
-
   padding: 50px 0px;
 `;
 
@@ -21,6 +22,10 @@ export const StyleTitle = styled.div`
 `;
 
 export const StyleProjectsMain = styled.div`
+  ${media.tablet` 
+  grid-template-columns: repeat(1, 1fr);
+  `};
+
   border-top: 1px solid ${(props) => props.theme.textColor};
 
   margin-top: 20px;
