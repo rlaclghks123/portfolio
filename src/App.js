@@ -7,15 +7,8 @@ import About from './routes/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Projects from './routes/Projects';
-import Contact from './routes/Contact';
 import NotFound from './routes/NotFound';
-import {
-  CONTACT_URL,
-  HOME_URL,
-  PROJECTS_URL,
-  PROJECT_URL,
-  REST_URL,
-} from './constants/urlConstants';
+import { HOME_URL, PROJECTS_URL, PROJECT_URL, REST_URL } from './constants/urlConstants';
 import ProjectIntroduce from './routes/ProjectIntroduce';
 
 const BlackWhiteBtn = styled.div`
@@ -58,7 +51,6 @@ function App() {
           <Route path={HOME_URL} element={<About />} />
           <Route path={PROJECTS_URL} element={<Projects />} />
           <Route path={PROJECT_URL} element={<ProjectIntroduce />} />
-          <Route path={CONTACT_URL} element={<Contact />} />
           <Route path={REST_URL} element={<NotFound />} />
         </Routes>
       </BrowserRouter>
