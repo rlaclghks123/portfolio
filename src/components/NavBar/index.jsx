@@ -3,11 +3,12 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Wrapper, Logo, TitleColumns, Title, TitleName, CurrentLocation } from './index.styles';
+import { HOME_URL, PROJECTS_URL } from '../../constants/urlConstants';
 
 const navTitle = [
-  { url: '/portfolio', title: 'About' },
-  { url: '/projects', title: 'Projects' },
-  { url: 'https://velog.io/@rlaclghks123/series', title: 'Velog' },
+  { url: HOME_URL, title: 'About' },
+  { url: PROJECTS_URL, title: 'Projects' },
+  { url: 'https://velog.io/@rlaclghks123/series', title: 'Blog' },
   { url: 'https://github.com/rlaclghks123', title: 'Github' },
 ];
 
