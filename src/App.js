@@ -42,7 +42,7 @@ function App() {
 
   return (
     <ThemeProvider theme={BlackAndWhiteBtn ? DefaultTheme : DarkTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolio">
         <Cover />
         <NavBar />
         <BlackWhiteBtn onClick={togleBtn}>다크 모드</BlackWhiteBtn>
