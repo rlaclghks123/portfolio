@@ -3,11 +3,10 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: max-content;
-
+  height: 500px;
+  padding: 20px;
   word-break: break-all;
-
-  margin-bottom: 10px;
+  overflow: auto;
 `;
 
 const Img = styled.img`
@@ -21,6 +20,7 @@ const AccordionDetails = ({ children, ...others }) => {
       {children.map((item, i) => {
         return (
           <div key={i}>
+            {i !== 0 && <hr></hr>}
             {item.text.map((item, i) => {
               return (
                 <li key={i}>

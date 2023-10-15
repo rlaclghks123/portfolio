@@ -6,7 +6,7 @@ const AccordionContainer = styled.div`
   overflow: hidden;
   height: 100%;
   margin: 5px 0px;
-  padding: 20px;
+  padding: 0px 20px;
   border-radius: 10px;
   box-shadow: ${({ expanded }) => (expanded ? '0px 0px 5px rgba(0,0,0,0.2)' : '')};
   box-sizing: border-box;
