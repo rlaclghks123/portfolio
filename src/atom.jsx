@@ -4,6 +4,219 @@ export const projectContents = atom({
   key: 'projectContents',
   default: [
     {
+      title: 'random-game',
+      images: ['https://rlaclghks123.github.io/portfolio/images/random-game/표지.jpg'],
+
+      projectType: '개인 프로젝트',
+      languages: ['React', 'Typescript', 'RTL', 'MSW'],
+      description: [
+        {
+          title: 'Introduce',
+          img: 'https://rlaclghks123.github.io/portfolio/images/random-game/표지.jpg',
+          githubUrl: 'https://github.com/rlaclghks123/random-game',
+          contents: [{ title: '친구들과 내기를 하기 위해 제작한 복불복 게임' }],
+        },
+
+        {
+          title: '프로젝트 구현 기능',
+          contents: [
+            {
+              title: '웹 표준을 지키며  SEO 향상을 위한 노력',
+              detail: [
+                {
+                  text: ['Lighthouse 100점 유지'],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/lighthouse.jpg',
+                },
+                {
+                  text: [
+                    `시맨틱 태그 사용
+                    
+                    - 큰 틀은 header,main을 사용했습니다.
+
+                    - 시작하기 버튼은 링크로 사용되기 때문에 Link로 사용했으며, FAQ와 Guide는 모달을 띄우는 것이므로 button을 사용했습니다.
+
+                    - modal의 경우 공통된 주제를 가지고 있다고 생각하여 section을 사용했습니다.
+
+                    - 설명하는 List의 경우 순서가 없기 때문에 ol, li를 사용했고, FAQ의 경우 순서가 없기 때문에 ul, li를 사용했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/시맨틱.jpg',
+                },
+                {
+                  text: [
+                    `키워드 선정 및 빈번하게 사용
+                    
+                    - 검색 키워드가 본문에 더 많이 사용된다면 랭킹 우선순위에 더욱 높아지기 때문에 적절한 키워드를 선택했습니다. 'random-game'
+                    
+                    - 많이 사용하는것도 좋지만 불편함 없이 적절하게 최대한 많이 본문에 키워드를 작성했습니다.
+                    `,
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/시맨틱.jpg',
+                },
+              ],
+            },
+            {
+              title: 'open API 에러 발생 시 Email JS 라이브러리를 활용하여 유지보수 향상',
+              detail: [
+                {
+                  text: [
+                    'Giphy API를 사용하여 사진을 받아오는데, 만약 에러 발생 시 form 창이 나타나도록 구현했습니다 ',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/form.jpg',
+                },
+                {
+                  text: [
+                    'Email JS를 활용하여 저의 이메일로 에러메세지가 전송되도록 구현하여 유지보수를 향상하는 데 노력했습니다.',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/email.jpg',
+                },
+              ],
+            },
+            {
+              title: 'React-Testing-Library, MSW를 통해 사용자 입력 값 및  API 테스트 진행',
+              detail: [
+                {
+                  text: [
+                    '우선 클라이언트 테스트를 진행했으며, 임의로 상태 값을 400으로 전달하여 form 창이 나타나는지 확인했습니다.',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/form.jpg',
+                },
+                {
+                  text: [
+                    'Home 화면에서 Guide, FAQ를 누르면 모달창이 잘 나타나는지 확인하는 테스트를 진행했습니다',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/homeTest.jpg',
+                },
+                {
+                  text: [
+                    'Game 화면에서 API의 에러 코드별로 에러 내용이 잘 나타나는지 확인했습니다.',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/apiTest.jpg',
+                },
+                {
+                  text: [
+                    'Game 화면에서 사용자의 입력값에 따른 이미지가 나타나는지 테스트를 진행했습니다.',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/inputTest.jpg',
+                },
+              ],
+            },
+            {
+              title: '반복되는 컴포넌트 생성',
+              detail: [
+                {
+                  text: [
+                    '공통적인 Header 부분과 다른 부분인 Main 부분을 layout으로 나눠 재활용 했습니다.',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/layout.jpg',
+                },
+                {
+                  text: [
+                    '다른 부분인 click handler와 title은 props로 받아 재활용 가능한 Modal 컴포넌트 생성 및 사용',
+                  ],
+                  img: 'https://rlaclghks123.github.io/portfolio/images/random-game/modal.jpg',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: '프로젝트를 통해 배운점',
+          contents: [
+            {
+              title: 'Vite와 CRA의 차이점',
+              detail: [
+                {
+                  text: [
+                    'CRA는 초기설정이 간편하기 때문에 많이 사용합니다. 하지만 Webpack을 사용하여 번들링 하며, webpack은 NodeJs패키지 이므로 단일 쓰레드에서 동작하기 때문에 상대적으로 속도가 느립니다.',
+                    '반면 Vite는 go언어로 작성된 EsBuild를 사용하여 번들링 하며 EsBuild 또한 단일 쓰레드에서 동작하지만 go언어의 내부적으로 병렬처리가 가능하기 때문에 속도가 빠릅니다. 또한 ESM을 기반으로 해서 HMR을 지원하기 때문에 처음 번들링 후 수정 사항이 생기면 수정된 부분만 새로 번들링 하므로 빠른 속도를 가집니다. 10배~ 100배까지 차이가 난다고 합니다.',
+                    '간단하고 빠른 설정을 원한다면 Vite가 더 낫고 기능이 풍부하고 광범위하게 지원되는 도구를 원한다면 CRA가 더 나은 선택으로 보입니다. 따라서 Vite를 통해 프로젝트를 진행했습니다.',
+                  ],
+                },
+              ],
+            },
+            {
+              title: 'SEO 최적화 방법',
+              detail: [
+                {
+                  text: [
+                    `  첫째 : lighthouse 높은 점수 유지,
+                    - 홈페이지, 게임페이지 둘 다 lighthouse 100점 유지,
+                    - 글자색과 배경색의 명도 대비를 4.5:1 이상을 유지했습니다.,
+                    - robots.txt 파일을 생성하였습니다. 단 저의 프로젝트에선 웹크롤링을 차단할 페이지가 없어 모두 Allow로 허용했습니다.`,
+                  ],
+                },
+                {
+                  text: [
+                    `둘째 : 사이트 보안 HTTP보단 HTTPS 사용
+                     -> Vercel에 배포를 통해 HTTPS 도메인 사용`,
+                  ],
+                },
+                {
+                  text: [
+                    `셋째 : URL을 키워드와 관련해서 빌드
+                    -> URL에 한글로 복불복게임을 지정할 수 없어 가장 적합한 영어 단어인 random-game 으로 구성했습니다.`,
+                  ],
+                },
+                {
+                  text: [
+                    `넷째 : 모바일 친화적
+                    -> 모바일 친화적인지 확인하는 사이트에서 60~70점 정도면 모바일 친화적이다 라고 합니다.`,
+                  ],
+                },
+                {
+                  text: [
+                    `다섯째 : img alt 속성 추가, meta태그, title 작성
+                    - Img에 alt속성을 추가하여 이미지가 나타나지 않을때 설명하는 글을 나타나도록 합니다
+                    - meta 태그 작성 : 구글 크롤러는 meta태그를 작성한다고 해서 우선순위가 높아지지는 않는다고 합니다. 하지만 meta tag에 글을 잘 작성한다면 사용자들의 클릭 수를 높여주기 때문에 꼭 작성해야 합니다. meta 태그 내부에도 최대한 키워드를 많이 넣어주도록 합니다.`,
+                  ],
+                },
+                {
+                  text: [
+                    `여섯째 : 자주 사용할 키워드를 선정하고, 본문에 사용자에게 불편함을 느끼지 않는 정도로 최대한 많이 작성해줍니다
+                    - 검색 키워드가 본문에 더 많이 사용된다면 랭킹 우선순위에 더욱 높아진다고 합니다. 따라서 적절하게 최대한 많이 작성합니다`,
+                  ],
+                },
+                {
+                  text: [
+                    `일곱째 : 시맨틱 태그 사용
+                    - div 태그를 통해 구성할 수 있지만, 시맨틱 태그를 사용하여 layout을 구성한다면 SEO에 최적화에 더욱 도움이 됩니다`,
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: '발생한 문제 및 해결',
+          contents: [
+            {
+              title: '테스트시 Router 문제발생',
+              detail: [
+                {
+                  text: [
+                    `문제발생 
+제가 프로젝트를 진행하며 React-Router-Dom을 활용하여 Link를 사용하기 위해 BrowserRouter로 감싸주었습니다. 이때 BrowserRouter는 브라우저 History API를 사용해 현재 위치의 URL을 저장해주는 역할을 합니다.
+즉 실제 브라우저 환경이 필요한데 테스트 환경에서는 실제 브라우저가 없으므로 BrowserRouter를 사용할 수 없습니다.
+따라서 Link 테그가 BrowerRouter 내부에 없게 되어 문제가 발생하게 된 것입니다.
+`,
+                  ],
+                },
+                {
+                  text: [
+                    `문제해결
+                  MemoryRouter를 사용하여 브라우저가 아닌 메모리 기반의 라우팅을 시뮬레이트할 수 있습니다.
+MemoryRouter를 사용하면 브라우저 히스토리가 아닌 메모리 상에서 라우팅을 처리하므로, 테스트 환경에서도 라우팅과 관련된 테스트를 수행할 수 있습니다.
+                  `,
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: 'Review-cock',
       images: [
         'https://rlaclghks123.github.io/portfolio/images/review-cock/notLoginHome.jpg',
@@ -195,246 +408,6 @@ export const projectContents = atom({
               ],
             },
           ],
-        },
-      ],
-    },
-
-    // {
-    //   title: 'Bridge Game',
-    //   images: [
-    //     'https://rlaclghks123.github.io/portfolio/images/bridge_game/play.jpg',
-    //     'https://rlaclghks123.github.io/portfolio/images/bridge_game/class.jpg',
-    //     'https://rlaclghks123.github.io/portfolio/images/bridge_game/test.jpg',
-    //   ],
-
-    //   projectType: '개인프로젝트',
-    //   languages: ['Vanilla Js', 'NodeJS'],
-    //   githubUrl: 'https://github.com/rlaclghks123/javascript-bridge/tree/practiceAfterTest/docs',
-    //   description: [
-    //     {
-    //       title: 'Preview',
-    //       video: 'https://rlaclghks123.github.io/portfolio/images/bridge_game/testVideo.mp4',
-    //       contents: [],
-    //     },
-    //     {
-    //       title: '프로젝트를 진행하며 배운점',
-    //       contents: [
-    //         {
-    //           title: `MVC 디자인패턴 사용하는 이유`,
-    //         },
-    //         { title: 'Clean Code를 작성하면 좋은점' },
-    //         { title: '작성한 코드를 Test하는 방법' },
-    //         { title: '유효성 검사를 어디서 처리를 하는것이 좋을까' },
-    //       ],
-    //       url: 'https://velog.io/@rlaclghks123/%ED%9A%8C%EA%B3%A0-Vanilla-JS-NodeJS%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Bridge-Game-%EB%A7%8C%EB%93%A4%EA%B8%B0',
-    //     },
-    //     {
-    //       title: '발생한 문제',
-    //       contents: [
-    //         { title: 'this값의 변경으로 인한 문제발생 ⇒ bind함수를 통해 this를 인자로 넘겨 해결' },
-    //       ],
-    //       url: 'https://velog.io/@rlaclghks123/%EC%82%BD%EC%A7%88%EB%B0%A9%EC%A7%80-%EB%B9%84%EB%8F%99%EA%B8%B0-this-bind',
-    //     },
-    //   ],
-    // },
-
-    {
-      title: 'ToDo List',
-      images: [
-        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/basic.jpg',
-        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/closeToDoList.jpg',
-        'https://rlaclghks123.github.io/portfolio/images/todo_list_img/expandToDoList.jpg',
-      ],
-      projectType: '클론코딩',
-      languages: ['HTML', 'CSS', 'Vanilla Js'],
-      description: [
-        {
-          title: 'Preview',
-          img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/basic.jpg',
-          githubUrl: 'https://github.com/rlaclghks123/momentom-2021',
-          contents: [],
-        },
-
-        {
-          title: '프로젝트 구현 기능',
-          contents: [
-            { title: 'LocalStorage를 활용하여 사용자 기억' },
-            { title: 'Date 객체를 활용하여 시계 기능' },
-            {
-              title: 'Event, Dom API를 활용하여 ToDoList 추가 기능',
-            },
-            { title: '날씨 API를 활용하여 현재 위치 정보 및 날씨 정보 알림 기능' },
-            { title: '메모장 확대, 축소, 창닫기 기능' },
-          ],
-        },
-
-        {
-          title: '발생한 문제 및 해결',
-          contents: [
-            {
-              title:
-                '하드코딩으로 인한 localStorage key 값이 다름으로 인해 저장 되지 않은 문제 발생',
-              detail: [
-                {
-                  text: [
-                    `localStorage에 저장할때 key값을 하드코딩을 하여 key값의 이름이 달라 값이 저장이 되지 않았던 문제를 겪었습니다. 
-                    큰일은 아닌데, 엄청난 큰일입니다.
-                    "하드코딩을 하지 말고, 상수 처리를 하라" 는 말을 뼈저리게 느끼게 되었습니다.
-                    `,
-                  ],
-                },
-                {
-                  text: [`문제발생`],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/localStorageProblem.jpg',
-                },
-                {
-                  text: [`문제해결`],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/localStorageSolution.jpg',
-                },
-              ],
-            },
-            {
-              title: 'toDoList 삭제 되지 않는 문제 발생',
-              detail: [
-                {
-                  text: [
-                    `ToDoList 삭제하는 코드
-
-                    1. 삭제 button을 클릭합니다.
-                    2. 삭제 button의 부모 태그인 li를 찾아줍니다.
-                    3. remove 메소드를 사용하여 li를 제거해줍니다.
-                    4. filter 메서드를 사용하여 기존의 toDos배열과 비교해서, 현재 클릭한 li의 id값과 다른 값들로만 새로운 배열을 toDos에 만들어줍니다.
-                    5. filter한 값을 LocalStorage에 새롭게 저장해줍니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove1.jpg',
-                },
-                {
-                  text: [
-                    `문제 발생
-
-                    1. 삭제는 잘 되지만, 새로고침시 삭제한 list가 다시 나타나는 문제가 발생
-                    → localStorage를 확인 해보니 list가 삭제되었음에도, localStorage에 삭제되지 않음을 확인할 수 있습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove2.jpg',
-                },
-
-                {
-                  text: [
-                    `에러 발견
-                    list를 삭제 후 filter 과정에서 문제가 발생한 것 같아 filter함수에서 비교하는 id값을 console.log로 확인 해보니 id값들의 type이 다른걸 알 수 있었습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove3.jpg',
-                },
-
-                {
-                  text: [
-                    `에러 해결
-                    따라서 사진과 같이 li의 id값을 Number 형식으로 바꿔주니 잘 작동했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove4.jpg',
-                },
-
-                {
-                  text: [
-                    `궁금증
-                    분명 Number 타입의 숫자 값을 저장해 줬는데 왜 li의 id 값은 문자열로 되어있을까요?
-                    → HTML에서 id 속성값은 문자열 형태로 지정된다고 합니다. 
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/remove5.jpg',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          title: '클론코딩 후 스스로 개선점 및 추가기능',
-          contents: [
-            {
-              title: '빈 값도 toDoList에 추가되는 문제를 개선',
-              detail: [
-                {
-                  text: [
-                    `불편함 발생 : ToDoList를 추가하는 과정에서 빈 값도 추가되는, 사용자 입장에서 불편함을 느낄 수 있다고 생각했습니다.
-                     빈 값을 입력 받으면 alert를 통해 사용자에게 "값을 입력해주세요" 라는 요청 문구를 통해 알려주고, ToDoList에 값을 추가하지 않도록 기능을 추가했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/emptyValImg.jpg',
-                },
-                {
-                  text: [
-                    `불편함 해결 : trim() 함수를 사용하여 입력값의 앞 뒤 공백을 제거한뒤, if 문을 통해 입력받은 값이 빈값('')일 경우 alert로 사용자에게 알려주고, 종료하여 값을 추가하지 않도록 구현했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/emptyAlertImg.jpg',
-                },
-              ],
-            },
-            {
-              title: '삭제 버튼 클릭시 바로 삭제 되는 부분 개선',
-              detail: [
-                {
-                  text: [
-                    `불편함 발생 :  X 버튼 클릭 시 바로 삭제되도록 구현했었습니다. 그러나 실수로 X 버튼을 누를 수 있으므로 사용자 관점에서 불편함을 느낄 수 있다고 생각했습니다.
-                    `,
-                  ],
-                },
-                {
-                  text: [
-                    `불편함 해결 : confirm 메소드를 통해 삭제 시 확인 요청을 받도록 수정했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/confirmMsgImg.jpg',
-                },
-              ],
-            },
-            {
-              title: '메모장 전체화면, 축소, 창닫기 3가지 기능 추가',
-              detail: [
-                {
-                  text: [
-                    `Event에 익숙해지기 위해 Click Event를 통해 전체화면, 축소, 창 닫기 3가지 기능을 구현해 봤습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/originMemo.jpg',
-                },
-
-                {
-                  text: [
-                    `창닫기
-                     click Event를 사용하여 메모장의 빨간버튼을 클릭하면 메모장이 닫아지도록 구현했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/closedMemo.jpg',
-                },
-                {
-                  text: [
-                    `전체화면
-                     click Event를 사용하여 메모장의 초록버튼을 클릭하면 메모장이 확대 되도록 구현했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/zoomInMemo.jpg',
-                },
-                {
-                  text: [
-                    `축소
-                     click Event를 사용하여 메모장의 노란버튼을 클릭하면 확대 되어있던 메모장이 축소 되도록 구현했습니다.
-                    `,
-                  ],
-                  img: 'https://rlaclghks123.github.io/portfolio/images/todo_list_img/originMemo.jpg',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          title: 'ToDoList 회고',
-          contents: [],
-          url: 'https://velog.io/@rlaclghks123/%ED%9A%8C%EA%B3%A0-Vanilla-Js%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-ToDoList-%EB%A7%8C%EB%93%A4%EA%B8%B0',
         },
       ],
     },
